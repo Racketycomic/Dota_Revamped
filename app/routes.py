@@ -1,5 +1,5 @@
 from app import app
-from flask import render_template,url_for,redirect
+from flask import render_template, url_for,redirect
 from app import dbservices as db
 from flask_login import current_user, login_user, logout_user
 from app.forms import LoginForm, RegisterForm, matchbar
@@ -20,10 +20,8 @@ def login():
     print(form.password.data)
     user = ''
     if form.validate_on_submit():
-        print(form.email.data)
-        print(form.password.data)
         u = db.logindetails.find_one({"_id": form.email.data}, {"_id": 1})
-        u['email'] = user
+        user = u['email']
         if user is None or not db.check_password(form.password.data, form):
             flag1 = 1
             return render_template('login.html', form=form, flag1=flag1)
@@ -55,3 +53,65 @@ def register():
 def logout():
     logout_user()
     return redirect(url_for('index'))
+
+
+@app.route('/performance', methods=['GET', 'POST'])
+def performance():
+    id = current_user.get_id()
+    user = db.playerhero.find_one({"_id":id}, {"performance":1,"heroname":1,"_id":0})
+    return render_template('performance.html',user=user)
+
+
+@app.route('/mids',methods=['POST','GET'])
+
+def mids():
+    form=matchbar()
+    matches=form.matchid.data
+    if form.validate_on_submit():
+        return redirect('midswid/'+str(matches))
+    return render_template('newmatch.html',form=form)
+
+@app.route('/midswid/<int:matches>',methods=["POST","GET"])
+def midswid(matches):
+    users = db.match.find_one({"_id": matches})
+    print("inside mid before if")
+    if len(users) == 0:
+        print("inside the if loop in mids")
+        matchdetail = matchtable()
+        matchdetail.getmatch(matches)
+        users = db.match.find_one({"_id": matches })
+        radiant= db.playermatch.find_one({"_id": matches},
+                                 {"playerid": {"$slice": 5} , "kill_count": {"$slice": 5},
+                                  "death_count": {"$slice": 5}, "assist_count": {"$slice": 5},
+                                  "kdaratio": {"$slice": 5}, "playername": {"$slice": 5},
+                                  "xpm": {"$slice": 5}, "gpm": {"$slice": 5},
+                                  "team": {"$slice": 5}, "result": {"$slice": 5},
+                                  "heroname": {"$slice": 5}
+                                    })
+        dire = db.playermatch.find_one({"_id": 4305164363},
+                                 {"playerid": {"$slice": -5} , "kill_count": {"$slice": -5},
+                                  "death_count": {"$slice": -5}, "assist_count": {"$slice": -5},
+                                  "kdaratio": {"$slice": -5}, "playername": {"$slice": -5},
+                                  "xpm": {"$slice": -5}, "gpm": {"$slice": -5},
+                                  "team": {"$slice": -5}, "result": {"$slice": -5},
+                                  "heroname": {"$slice": -5}
+                                    })
+        return render_template("matchtable.html",users=users,radiant=radiant,dire=dire)
+
+
+        radiant = db.playermatch.find_one({"_id": matches},
+                             {"playerid": {"$slice": 5} , "kill_count": {"$slice": 5},
+                              "death_count": {"$slice": 5}, "assist_count": {"$slice": 5},
+                              "kdaratio": {"$slice": 5}, "playername": {"$slice": 5},
+                              "xpm": {"$slice": 5}, "gpm": {"$slice": 5},
+                              "team": {"$slice": 5}, "result": {"$slice": 5},
+                              "heroname": {"$slice": 5}
+        dire = db.playermatch.find_one({"_id": matches},
+                             {"playerid": {"$slice": -5} , "kill_count": {"$slice": -5},
+                              "death_count": {"$slice": -5}, "assist_count": {"$slice": -5},
+                              "kdaratio": {"$slice": -5}, "playername": {"$slice": -5},
+                              "xpm": {"$slice": -5}, "gpm": {"$slice": -5},
+                              "team": {"$slice": -5}, "result": {"$slice": -5},
+                              "heroname": {"$slice": -5}}
+                                        )
+    return render_template('matchtable.html', users=users, radiant=radiant, dire=dire)

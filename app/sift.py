@@ -2,64 +2,62 @@ from app import dbservices as db
 import requests
 import collections
 import random
-import urllib
-from pymongo import MongoClient
-import pymongo
 
 
 class playertable():
 
-    def getinfo(self,playerid):
-        plist=[]
+    def getinfo(self, playerid):
+
+        plist = []
         plist.append(playerid)
-        req1=requests.get(f'https://api.opendota.com/api/players/{playerid}/wl')
-        json1=req1.json()
+        req1 = requests.get(f'https://api.opendota.com/api/players/{playerid}/wl')
+        json1 = req1.json()
         for key,value in json1.items():
             plist.append(value)
         plist.append(int(plist[1]+plist[2]))
-        req2=requests.get(f"https://api.opendota.com/api/players/{playerid}/totals")
-        json2=req2.json()
+        req2 = requests.get(f"https://api.opendota.com/api/players/{playerid}/totals")
+        json2 = req2.json()
 
         #gpm calc
         for i in json2:
-            if i['field']=='gold_per_min':
+            if i['field'] == 'gold_per_min':
                 mydict=i
                 break
 
-        l1=[]
-        for key,values in mydict.items():
+        l1 = []
+        for key, values in mydict.items():
             l1.append(values)
-        gpm=l1[2]/l1[1]
+        gpm = l1[2]/l1[1]
         plist.append(int(gpm))
 
         #xpm calc
         for i in json2:
-            if i['field']=='xp_per_min':
-                mydict=i
+            if i['field'] == 'xp_per_min':
+                mydict = i
                 break
-        l1=[]
-        for key,values in mydict.items():
+        l1 = []
+        for key, values in mydict.items():
             l1.append(values)
 
-        xpm=l1[2]/l1[1]
+        xpm = l1[2]/l1[1]
         plist.append(int(xpm))   #[id,win,loss,totalmatches,gpm,xpm]
 
         #kda calc
         for i in json2:
-            if i['field']=='kda':
-                mydict=i
+            if i['field'] == 'kda':
+                mydict = i
                 break
 
-        l1=[]
-        for key,values in mydict.items():
+        l1 = []
+        for key, values in mydict.items():
             l1.append(values)
 
-        kda=l1[2]/l1[1]
+        kda = l1[2]/l1[1]
         plist.append(kda)  #[id,win,loss,totalmatches,gpm,xpm,kda]
 
-        req3=requests.get(f"https://api.opendota.com/api/players/{playerid}")
-        json3=req3.json()
-        for key,values in json3.items():
+        req3 = requests.get(f"https://api.opendota.com/api/players/{playerid}")
+        json3 = req3.json()
+        for key, values in json3.items():
             if key == "solo_competitive_rank":
                 plist.append(values)           #[id,win,loss,totalmatches,gpm,xpm,kda,mmr]
 
@@ -70,45 +68,42 @@ class playertable():
 
         ####!!!!!!!!!!!player Performance table !!!!!!!!!!!!!#
 
-        re1=requests.get(f'https://api.opendota.com/api/players/{playerid}/rankings')
-        j1=re1.json()
+        re1 = requests.get(f'https://api.opendota.com/api/players/{playerid}/rankings')
+        j1 = re1.json()
         print(j1)
-        id=[d['hero_id'] for d in j1]
-        perc=[d['percent_rank'] for d in j1]
-        size=len(id)
+        id = [d['hero_id'] for d in j1]
+        perc = [d['percent_rank'] for d in j1]
+        size = len(id)
         print(size)
 
-        playerdict=dict(zip(id,perc))
+        playerdict = dict(zip(id, perc))
         print(playerdict)
-        odpd=collections.OrderedDict(sorted(playerdict.items()))
+        odpd = collections.OrderedDict(sorted(playerdict.items()))
         print(odpd)
 
-        perc1=list(odpd.values())
+        perc1 = list(odpd.values())
         print(perc1)
-        id1=list(odpd.keys())
+        id1 = list(odpd.keys())
         print(id1)
         print(len(id1))
-        k=0
-        result=0
-        score=0
-        desc=[]
+        k = 0
+        result = 0
+        score = 0
+        desc = []
         while k<size:
             result=perc1[k]
             print(result)
             if result <= 0.2:
                 desc.append("Herald")
 
-            elif result >0.2 and result<=0.3:
+            elif result >0.2 and result<=  0.3:
                 desc.append("Guardian")
 
-
-            elif result >0.3 and result<=0.4:
+            elif result >0.3 and result <= 0.4:
                 desc.append("Crusader")
-
 
             elif result >0.4 and result<=0.5:
                 desc.append("Archon")
-
 
             elif result >0.5 and result<=0.7:
                 desc.append("Legend")
@@ -122,14 +117,14 @@ class playertable():
             else:
                 desc.append("Immortal")
 
-            k=k+1
+            k = k+1
 
 
         print(desc)
         names=[]
         k=0
         while k<size:
-            nam = herodetails.find_one({"_id": id1[k]}, {"_id": 0, "hero_name": 1})
+            nam = db.herodetails.find_one({"_id": id1[k]}, {"_id": 0, "hero_name": 1})
             for key,values in nam.items():
                 names.append(values)
             k=k+1
