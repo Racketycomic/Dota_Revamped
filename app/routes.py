@@ -19,6 +19,8 @@ def index():
 def update():
     return render_template('homepage_updates.html')
 
+
+@app.route('/login', methods=['POST', 'GET'])
 def login():
     flag1 = 0
     if current_user.is_authenticated:
@@ -70,7 +72,7 @@ def performance():
     id = current_user.get_id()
     user = db.playerhero.find_one({"_id": id}, {"performance": 1,
                                                 "heroname": 1, "_id": 0})
-    return render_template('performance.html', user=user)
+    return render_template('performance.html', users=user)
 
 
 @login_required
@@ -85,7 +87,7 @@ def mids():
 
 @app.route('/midswid/<int:matches>', methods=["POST", "GET"])
 def midswid(matches):
-
+    matches = 4305164363
     users = db.match.find_one({"_id": matches})
     print("inside mid before if")
     if len(users) == 0:
@@ -94,9 +96,9 @@ def midswid(matches):
         matchdetail = matchtable()
         matchdetail.getmatch(matches)
         users = db.match.find_one({"_id": matches})
+        print(users)
         radiant = db.playermatch.find_one({"_id": matches},
                                  {
-                                  "playerid": {"$slice": 5},
                                   "kill_count": {"$slice": 5},
                                   "death_count": {"$slice": 5},
                                   "assist_count": {"$slice": 5},
@@ -104,11 +106,10 @@ def midswid(matches):
                                   "playername": {"$slice": 5},
                                   "xpm": {"$slice": 5}, "gpm": {"$slice": 5},
                                   "team": {"$slice": 5}, "result": {"$slice": 5},
-                                  "heroname": {"$slice": 5}
+                                  "heroname": {"$slice": 5}, "_id": 0, "playerid": 0
                                     })
         dire = db.playermatch.find_one({"_id": matches},
                                  {
-                                  "playerid": {"$slice": -5},
                                   "kill_count": {"$slice": -5},
                                   "death_count": {"$slice": -5},
                                   "assist_count": {"$slice": -5},
@@ -118,6 +119,11 @@ def midswid(matches):
                                   "team": {"$slice": -5}, "result": {"$slice": -5},
                                   "heroname": {"$slice": -5}
                                     })
+        print(radiant)
+        for key, values in radiant.items():
+                if key == "playername":
+                    for j in values:
+                        g=j
         return render_template("match_id_analysis_result.html", users=users, radiant=radiant, dire=dire)
 
 
@@ -151,10 +157,10 @@ def herosearch():
     hname = form.hero.data
     if form.validate_on_submit():
         return (redirect("/heroname/"+str(hname)))
-    return render_template("hero_analysis.html")
+    return render_template("hero_analysis.html", form=form)
 
 
-@app.route("/heroname/<str:hname>", methods=['POST', 'GET'])
+@app.route("/heroname/<string:hname>", methods=['POST', 'GET'])
 def hero():
     form = heroname()
     hname = form.hero.data
@@ -166,10 +172,10 @@ def hero():
         rlist = yaml.safe_load(rstring)
         hlist = []
         for i in rlist:
-            for key,values in i.items():
+            for key, values in i.items():
                 if key == hname:
                     hlist = values
-    return render_template("hero_analysis_result.html", hname=hname)
+    return render_template("hero_analysis_result.html", hlist=hlist)
 
 
 logging.basicConfig(filename='app.log', filemode='a+')

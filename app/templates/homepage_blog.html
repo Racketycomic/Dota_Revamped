@@ -38,11 +38,11 @@
     <script src="{{url_for('static',filename='resources/scripts/axure/math.js')}}"></script>
     <script src="{{url_for('static',filename='resources/scripts/axure/jquery.nicescroll.min.js')}}"></script>
     <script src="{{url_for('static',filename='data/document.js')}}"></script>
-    <script src="{{url_for('static',filename='files/homepage_blog/data.js')}}"></script>
+    <script src="{{ url_for('static',filename='files/homepage_blog/data.js') }}"></script>
     <script type="text/javascript">
-      $axure.utils.getTransparentGifPath = function() { return "{{url_for('static',filename='resources/images/transparent.gif')}}"; };
-      $axure.utils.getOtherPath = function() { return "{{url_for('static',filename='resources/Other.html')}}"; };
-      $axure.utils.getReloadPath = function() { return "{{url_for('static',filename='resources/reload.html')}}"; };
+      $axure.utils.getTransparentGifPath = function() { return "{{ url_for('static',filename='resources/images/transparent.gif') }}"; };
+      $axure.utils.getOtherPath = function() { return "{{ url_for('static',filename='resources/Other.html') }}"; };
+      $axure.utils.getReloadPath = function() { return "{{ url_for('static',filename='resources/reload.html') }}"; };
     </script>
   </head>
   <body>
@@ -50,7 +50,7 @@
 
       <!-- Unnamed (Image) -->
       <div id="u0" class="ax_default image">
-        <img id="u0_img" class="img " src="{{url_for('static',filename='images/homepage_blog/u0.jpg')}}"/>
+        <img id="u0_img" class="img " src="{{ url_for('static',filename='images/homepage_blog/u0.jpg') }}"/>
         <div id="u0_text" class="text " style="display:none; visibility: hidden">
           <p></p>
         </div>
@@ -58,7 +58,7 @@
 
       <!-- Unnamed (Image) -->
       <div id="u1" class="ax_default image">
-        <img id="u1_img" class="img " src="{{url_for('static',filename='images/homepage_blog/u1.jpg')}}"/>
+        <img id="u1_img" class="img " src="{{ url_for('static',filename='images/homepage_blog/u1.jpg') }}"/>
         <div id="u1_text" class="text " style="display:none; visibility: hidden">
           <p></p>
         </div>
@@ -66,7 +66,7 @@
 
       <!-- Unnamed (Image) -->
       <div id="u2" class="ax_default image">
-        <img id="u2_img" class="img " src="{{url_for('static',filename='images/homepage_blog/u2.jpg')}}"/>
+        <img id="u2_img" class="img " src="{{ url_for('static',filename='images/homepage_blog/u2.jpg') }}"/>
         <div id="u2_text" class="text " style="display:none; visibility: hidden">
           <p></p>
         </div>
@@ -92,7 +92,7 @@
       <div id="u5" class="ax_default heading_2">
         <div id="u5_div" class=""></div>
         <div id="u5_text" class="text ">
-          <p><span><a href="{{url_for('performance')}}">PERFORMANCE</a></span></p>
+          <p><span><a href="{{ url_for('performance') }}">PERFORMANCE</a></span></p>
         </div>
       </div>
 
@@ -100,7 +100,7 @@
       <div id="u6" class="ax_default heading_2">
         <div id="u6_div" class=""></div>
         <div id="u6_text" class="text ">
-          <p><span><a href="{{url_for('mids')}}"> MATCH DETAILS</a></span></p>
+          <p><span><a href="{{ url_for('mids') }}"> MATCH DETAILS</a></span></p>
         </div>
       </div>
 
@@ -109,7 +109,7 @@
       <div id="u7" class="ax_default heading_2">
         <div id="u7_div" class=""></div>
         <div id="u7_text" class="text ">
-          <p><span><a href="{{url_for('login')}}"> LOGIN/REGISTER </a> </span></p>
+          <p><span><a href="{{ url_for('index') }}"> LOGIN/REGISTER </a> </span></p>
         </div>
       </div>
       {% else %}
@@ -117,14 +117,14 @@
       <div id="u29" class="ax_default heading_2">
         <div id="u29_div" class=""></div>
         <div id="u29_text" class="text ">
-          <p><span><a href="{{url_for('logout')}}">LOGOUT</a></span></p>
+          <p><span><a href="{{ url_for('logout') }}">LOGOUT</a></span></p>
         </div>
       </div>
 
       {% endif %}
       <!-- Unnamed (Image) -->
       <div id="u8" class="ax_default image">
-        <img id="u8_img" class="img " src="{{url_for('static',filename='images/homepage_blog/u8.jpg')}}"/>
+        <img id="u8_img" class="img " src="{{ url_for('static',filename='images/homepage_blog/u8.jpg') }}"/>
         <div id="u8_text" class="text " style="display:none; visibility: hidden">
           <p></p>
         </div>
@@ -156,7 +156,7 @@
 
       <!-- Unnamed (Vertical Line) -->
       <div id="u12" class="ax_default line">
-        <img id="u12_img" class="img " src="{{url_for('static',filename='images/homepage_blog/u12.svg')}}"/>
+        <img id="u12_img" class="img " src="{{ url_for('static',filename='images/homepage_blog/u12.svg') }}"/>
         <div id="u12_text" class="text " style="display:none; visibility: hidden">
           <p></p>
         </div>
@@ -180,7 +180,7 @@
 
       <!-- Unnamed (Image) -->
       <div id="u15" class="ax_default image">
-        <img id="u15_img" class="img " src="{{url_for('static',filename='images/homepage_blog/u15.png')}}"/>
+        <img id="u15_img" class="img " src="{{ url_for('static',filename='images/homepage_blog/u15.png') }}"/>
         <div id="u15_text" class="text " style="display:none; visibility: hidden">
           <p></p>
         </div>
@@ -286,7 +286,7 @@
       <div id="u28" class="ax_default heading_2">
         <div id="u28_div" class=""></div>
         <div id="u28_text" class="text ">
-          <p><span><a href="{{url_for('index')}}">HOME</span></a></p>
+          <p><span><a href="{{ url_for('index') }}">HOME</span></a></p>
         </div>
       </div>
 
@@ -295,10 +295,10 @@
       <div id="u30" class="ax_default heading_2">
         <div id="u30_div" class=""></div>
         <div id="u30_text" class="text ">
-          <p><span><a href="{{url_for('hernoname')}}">HERO ANALYSIS</a></span></p>
+        <p><span><a href="{{url_for('herosearch')}}">HERO ANALYSIS</span></p>
         </div>
       </div>
     </div>
-    <script src="{{url_for('static',filename=resources/scripts/axure/ios.js')}}"></script>
+    <script src="{{ url_for('static',filename='resources/scripts/axure/ios.js')}}"></script>
   </body>
 </html>

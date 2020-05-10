@@ -6,7 +6,7 @@
     <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
     <link href= "{{url_for('static',filename='resources/css/axure_rp_page.css')}}" type="text/css" rel="stylesheet"/>
     <link href="{{url_for('static',filename='data/styles.css')}}" type="text/css" rel="stylesheet"/>
-    <link href="{{url_for('static',filename='files/homepage_blog/styles.css')}}" type="text/css" rel="stylesheet"/>
+    <link href="{{url_for('static',filename='files/login/styles.css')}}" type="text/css" rel="stylesheet"/>
     <script src="{{url_for('static',filename='resources/scripts/jquery-3.2.1.min.js')}}"></script>
     <script src="{{url_for('static',filename='resources/scripts/axure/axQuery.js')}}"></script>
     <script src="{{url_for('static',filename='resources/scripts/axure/globals.js')}}"></script>
@@ -38,7 +38,7 @@
     <script src="{{url_for('static',filename='resources/scripts/axure/math.js')}}"></script>
     <script src="{{url_for('static',filename='resources/scripts/axure/jquery.nicescroll.min.js')}}"></script>
     <script src="{{url_for('static',filename='data/document.js')}}"></script>
-    <script src="{{url_for('static',filename='files/homepage_blog/data.js')}}"></script>
+    <script src="{{url_for('static',filename='files/login/data.js')}}"></script>
     <script type="text/javascript">
     $axure.utils.getTransparentGifPath = function() { return "{{url_for('static',filename='resources/images/transparent.gif')}}"; };
     $axure.utils.getOtherPath = function() { return "{{url_for('static',filename='resources/Other.html')}}"; };
@@ -208,10 +208,10 @@
       <div id="u75" class="ax_default heading_2">
         <div id="u75_div" class=""></div>
         <div id="u75_text" class="text ">
-        <p><span><a href="{{url_for('hernoname')}}">HERO SEARCH</a></span></p>
+        <p><span><a href="{{url_for('herosearch')}}">HERO ANALYSIS</span></p>
         </div>
       </div>
     </div>
-    <script src="resources/scripts/axure/ios.js"></script>
+    <script src="{{ url_for('static',filename='resources/scripts/axure/ios.js') }}"></script>
   </body>
 </html>

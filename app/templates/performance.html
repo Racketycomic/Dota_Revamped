@@ -4,45 +4,45 @@
     <title>Performance</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
-    <link href="resources/css/axure_rp_page.css" type="text/css" rel="stylesheet"/>
-    <link href="data/styles.css" type="text/css" rel="stylesheet"/>
-    <link href="files/performance/styles.css" type="text/css" rel="stylesheet"/>
-    <script src="resources/scripts/jquery-3.2.1.min.js"></script>
-    <script src="resources/scripts/axure/axQuery.js"></script>
-    <script src="resources/scripts/axure/globals.js"></script>
-    <script src="resources/scripts/axutils.js"></script>
-    <script src="resources/scripts/axure/annotation.js"></script>
-    <script src="resources/scripts/axure/axQuery.std.js"></script>
-    <script src="resources/scripts/axure/doc.js"></script>
-    <script src="resources/scripts/messagecenter.js"></script>
-    <script src="resources/scripts/axure/events.js"></script>
-    <script src="resources/scripts/axure/recording.js"></script>
-    <script src="resources/scripts/axure/action.js"></script>
-    <script src="resources/scripts/axure/expr.js"></script>
-    <script src="resources/scripts/axure/geometry.js"></script>
-    <script src="resources/scripts/axure/flyout.js"></script>
-    <script src="resources/scripts/axure/model.js"></script>
-    <script src="resources/scripts/axure/repeater.js"></script>
-    <script src="resources/scripts/axure/sto.js"></script>
-    <script src="resources/scripts/axure/utils.temp.js"></script>
-    <script src="resources/scripts/axure/variables.js"></script>
-    <script src="resources/scripts/axure/drag.js"></script>
-    <script src="resources/scripts/axure/move.js"></script>
-    <script src="resources/scripts/axure/visibility.js"></script>
-    <script src="resources/scripts/axure/style.js"></script>
-    <script src="resources/scripts/axure/adaptive.js"></script>
-    <script src="resources/scripts/axure/tree.js"></script>
-    <script src="resources/scripts/axure/init.temp.js"></script>
-    <script src="resources/scripts/axure/legacy.js"></script>
-    <script src="resources/scripts/axure/viewer.js"></script>
-    <script src="resources/scripts/axure/math.js"></script>
-    <script src="resources/scripts/axure/jquery.nicescroll.min.js"></script>
-    <script src="data/document.js"></script>
-    <script src="files/performance/data.js"></script>
+    <link href= "{{url_for('static',filename='resources/css/axure_rp_page.css')}}" type="text/css" rel="stylesheet"/>
+    <link href="{{url_for('static',filename='data/styles.css')}}" type="text/css" rel="stylesheet"/>
+    <link href="{{url_for('static',filename='files/performance/styles.css')}}" type="text/css" rel="stylesheet"/>
+    <script src="{{url_for('static',filename='resources/scripts/jquery-3.2.1.min.js')}}"></script>
+    <script src="{{url_for('static',filename='resources/scripts/axure/axQuery.js')}}"></script>
+    <script src="{{url_for('static',filename='resources/scripts/axure/globals.js')}}"></script>
+    <script src="{{url_for('static',filename='resources/scripts/axutils.js')}}"></script>
+    <script src="{{url_for('static',filename='resources/scripts/axure/annotation.js')}}"></script>
+    <script src="{{url_for('static',filename='resources/scripts/axure/axQuery.std.js')}}"></script>
+    <script src="{{url_for('static',filename='resources/scripts/axure/doc.js')}}"></script>
+    <script src="{{url_for('static',filename='resources/scripts/messagecenter.js')}}"></script>
+    <script src="{{url_for('static',filename='resources/scripts/axure/events.js')}}"></script>
+    <script src="{{url_for('static',filename='resources/scripts/axure/recording.js')}}"></script>
+    <script src="{{url_for('static',filename='resources/scripts/axure/action.js')}}"></script>
+    <script src="{{url_for('static',filename='resources/scripts/axure/expr.js')}}"></script>
+    <script src="{{url_for('static',filename='resources/scripts/axure/geometry.js')}}"></script>
+    <script src="{{url_for('static',filename='resources/scripts/axure/flyout.js')}}"></script>
+    <script src="{{url_for('static',filename='resources/scripts/axure/model.js')}}"></script>
+    <script src="{{url_for('static',filename='resources/scripts/axure/repeater.js')}}"></script>
+    <script src="{{url_for('static',filename='resources/scripts/axure/sto.js')}}"></script>
+    <script src="{{url_for('static',filename='resources/scripts/axure/utils.temp.js')}}"></script>
+    <script src="{{url_for('static',filename='resources/scripts/axure/variables.js')}}"></script>
+    <script src="{{url_for('static',filename='resources/scripts/axure/drag.js')}}"></script>
+    <script src="{{url_for('static',filename='resources/scripts/axure/move.js')}}"></script>
+    <script src="{{url_for('static',filename='resources/scripts/axure/visibility.js')}}"></script>
+    <script src="{{url_for('static',filename='resources/scripts/axure/style.js')}}"></script>
+    <script src="{{url_for('static',filename='resources/scripts/axure/adaptive.js')}}"></script>
+    <script src="{{url_for('static',filename='resources/scripts/axure/tree.js')}}"></script>
+    <script src="{{url_for('static',filename='resources/scripts/axure/init.temp.js')}}"></script>
+    <script src="{{url_for('static',filename='resources/scripts/axure/legacy.js')}}"></script>
+    <script src="{{url_for('static',filename='resources/scripts/axure/viewer.js')}}"></script>
+    <script src="{{url_for('static',filename='resources/scripts/axure/math.js')}}"></script>
+    <script src="{{url_for('static',filename='resources/scripts/axure/jquery.nicescroll.min.js')}}"></script>
+    <script src="{{url_for('static',filename='data/document.js')}}"></script>
+    <script src="{{url_for('static',filename='files/performance/data.js')}}"></script>
     <script type="text/javascript">
-      $axure.utils.getTransparentGifPath = function() { return 'resources/images/transparent.gif'; };
-      $axure.utils.getOtherPath = function() { return 'resources/Other.html'; };
-      $axure.utils.getReloadPath = function() { return 'resources/reload.html'; };
+    $axure.utils.getTransparentGifPath = function() { return "{{url_for('static',filename='resources/images/transparent.gif')}}"; };
+    $axure.utils.getOtherPath = function() { return "{{url_for('static',filename='resources/Other.html')}}"; };
+    $axure.utils.getReloadPath = function() { return "{{url_for('static',filename='resources/reload.html')}}"; };
     </script>
   </head>
   <body>
@@ -50,7 +50,7 @@
 
       <!-- Unnamed (Image) -->
       <div id="u96" class="ax_default image">
-        <img id="u96_img" class="img " src="images/performance/u96.jpg"/>
+        <img id="u96_img" class="img " src="{{url_for('static',filename='images/performance/u96.jpg')}}"/>
         <div id="u96_text" class="text " style="display:none; visibility: hidden">
           <p></p>
         </div>
@@ -58,7 +58,7 @@
 
       <!-- Unnamed (Image) -->
       <div id="u97" class="ax_default image">
-        <img id="u97_img" class="img " src="images/homepage_blog/u0.jpg"/>
+        <img id="u97_img" class="img " src="{{url_for('static',filename='images/homepage_blog/u0.jpg')}}"/>
         <div id="u97_text" class="text " style="display:none; visibility: hidden">
           <p></p>
         </div>
@@ -66,7 +66,7 @@
 
       <!-- Unnamed (Image) -->
       <div id="u98" class="ax_default image">
-        <img id="u98_img" class="img " src="images/homepage_blog/u2.jpg"/>
+        <img id="u98_img" class="img " src="{{url_for('static',filename='images/homepage_blog/u2.jpg')}}"/>
         <div id="u98_text" class="text " style="display:none; visibility: hidden">
           <p></p>
         </div>
@@ -74,7 +74,7 @@
 
       <!-- Unnamed (Image) -->
       <div id="u99" class="ax_default image">
-        <img id="u99_img" class="img " src="images/homepage_blog/u3.png"/>
+        <img id="u99_img" class="img " src="{{url_for('static',filename='images/homepage_blog/u3.png')}}"/>
         <div id="u99_text" class="text " style="display:none; visibility: hidden">
           <p></p>
         </div>
@@ -87,10 +87,51 @@
           <p><span>Dota 2 Analytica</span></p>
         </div>
       </div>
+      {% if not current_user.is_anonymous %}
+      <!-- Unnamed (Rectangle) -->
+      <div id="u129" class="ax_default heading_2">
+        <div id="u129_div" class=""></div>
+        <div id="u129_text" class="text ">
+          <p><span>LOGOUT</span></p>
+        </div>
+      </div>
+      {% endif %}
+      <!-- Unnamed (Rectangle) -->
+      <div id="u130" class="ax_default heading_2">
+        <div id="u130_div" class=""></div>
+        <div id="u130_text" class="text ">
+          <p><span><a href="{{url_for('performance')}}">PERFORMANCE</a></span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u131" class="ax_default heading_2">
+        <div id="u131_div" class=""></div>
+        <div id="u131_text" class="text ">
+          <p><span><a href="{{url_for('mids')}}"> MATCH DETAILS</a></span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u132" class="ax_default heading_2">
+        <div id="u132_div" class=""></div>
+        <div id="u132_text" class="text ">
+          <p><span><a href="{{url_for('index')}}">HOME</span></a></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u133" class="ax_default heading_2">
+        <div id="u133_div" class=""></div>
+        <div id="u133_text" class="text ">
+        <p><span><a href="{{url_for('herosearch')}}">HERO ANALYSIS</a></span></p>
+        </div>
+      </div>
+    </div>
 
       <!-- Unnamed (Image) -->
       <div id="u101" class="ax_default image">
-        <img id="u101_img" class="img " src="images/homepage_blog/u8.jpg"/>
+        <img id="u101_img" class="img " src="{{url_for('static',filename='images/homepage_blog/u8.jpg')}}"/>
         <div id="u101_text" class="text " style="display:none; visibility: hidden">
           <p></p>
         </div>
@@ -106,7 +147,7 @@
 
       <!-- Unnamed (Image) -->
       <div id="u103" class="ax_default image">
-        <img id="u103_img" class="img " src="images/homepage_blog/u21.png"/>
+        <img id="u103_img" class="img " src="{{url_for('static',filename='images/homepage_blog/u21.png')}}"/>
         <div id="u103_text" class="text " style="display:none; visibility: hidden">
           <p></p>
         </div>
@@ -125,7 +166,7 @@
 
         <!-- Unnamed (Table Cell) -->
         <div id="u106" class="ax_default table_cell">
-          <img id="u106_img" class="img " src="images/performance/u106.png"/>
+          <img id="u106_img" class="img " src="{{url_for('static',filename='images/performance/u106.png')}}"/>
           <div id="u106_text" class="text ">
             <p><span>Matches Played</span></p>
           </div>
@@ -133,7 +174,7 @@
 
         <!-- Unnamed (Table Cell) -->
         <div id="u107" class="ax_default table_cell">
-          <img id="u107_img" class="img " src="images/performance/u106.png"/>
+          <img id="u107_img" class="img " src="{{url_for('static',filename='images/performance/u106.png')}}"/>
           <div id="u107_text" class="text ">
             <p><span>Wins</span></p>
           </div>
@@ -141,7 +182,7 @@
 
         <!-- Unnamed (Table Cell) -->
         <div id="u108" class="ax_default table_cell">
-          <img id="u108_img" class="img " src="images/performance/u106.png"/>
+          <img id="u108_img" class="img " src="{{url_for('static',filename='images/performance/u106.png')}}"/>
           <div id="u108_text" class="text ">
             <p><span>Losses</span></p>
           </div>
@@ -149,7 +190,7 @@
 
         <!-- Unnamed (Table Cell) -->
         <div id="u109" class="ax_default table_cell">
-          <img id="u109_img" class="img " src="images/performance/u109.png"/>
+          <img id="u109_img" class="img " src="{{url_for('static',filename='images/performance/u109.png')}}"/>
           <div id="u109_text" class="text ">
             <p><span>Average XPM</span></p>
           </div>
@@ -157,7 +198,7 @@
 
         <!-- Unnamed (Table Cell) -->
         <div id="u110" class="ax_default table_cell">
-          <img id="u110_img" class="img " src="images/performance/u106.png"/>
+          <img id="u110_img" class="img " src="{{url_for('static',filename='images/performance/u106.png')}}"/>
           <div id="u110_text" class="text ">
             <p><span>Average GPM</span></p>
           </div>
@@ -165,7 +206,7 @@
 
         <!-- Unnamed (Table Cell) -->
         <div id="u111" class="ax_default table_cell">
-          <img id="u111_img" class="img " src="images/performance/u106.png"/>
+          <img id="u111_img" class="img " src="{{url_for('static',filename='images/performance/u106.png')}}"/>
           <div id="u111_text" class="text ">
             <p><span>Average KDA</span></p>
           </div>
@@ -173,7 +214,7 @@
 
         <!-- Unnamed (Table Cell) -->
         <div id="u112" class="ax_default table_cell">
-          <img id="u112_img" class="img " src="images/performance/u112.png"/>
+          <img id="u112_img" class="img " src="{{url_for('static',filename='images/performance/u112.png')}}"/>
           <div id="u112_text" class="text ">
             <p><span>MMR</span></p>
           </div>
@@ -181,7 +222,7 @@
 
         <!-- Unnamed (Table Cell) -->
         <div id="u113" class="ax_default table_cell">
-          <img id="u113_img" class="img " src="images/performance/u113.png"/>
+          <img id="u113_img" class="img " src="{{url_for('static',filename='images/performance/u113.png')}}"/>
           <div id="u113_text" class="text " style="display:none; visibility: hidden">
             <p></p>
           </div>
@@ -189,7 +230,7 @@
 
         <!-- Unnamed (Table Cell) -->
         <div id="u114" class="ax_default table_cell">
-          <img id="u114_img" class="img " src="images/performance/u113.png"/>
+          <img id="u114_img" class="img " src="{{url_for('static',filename='images/performance/u113.png')}}"/>
           <div id="u114_text" class="text " style="display:none; visibility: hidden">
             <p></p>
           </div>
@@ -197,7 +238,7 @@
 
         <!-- Unnamed (Table Cell) -->
         <div id="u115" class="ax_default table_cell">
-          <img id="u115_img" class="img " src="images/performance/u113.png"/>
+          <img id="u115_img" class="img " src="{{url_for('static',filename='images/performance/u113.png')}}"/>
           <div id="u115_text" class="text " style="display:none; visibility: hidden">
             <p></p>
           </div>
@@ -205,7 +246,7 @@
 
         <!-- Unnamed (Table Cell) -->
         <div id="u116" class="ax_default table_cell">
-          <img id="u116_img" class="img " src="images/performance/u116.png"/>
+          <img id="u116_img" class="img " src="{{url_for('static',filename='images/performance/u116.png')}}"/>
           <div id="u116_text" class="text " style="display:none; visibility: hidden">
             <p></p>
           </div>
@@ -213,7 +254,7 @@
 
         <!-- Unnamed (Table Cell) -->
         <div id="u117" class="ax_default table_cell">
-          <img id="u117_img" class="img " src="images/performance/u113.png"/>
+          <img id="u117_img" class="img " src="{{url_for('static',filename='images/performance/u113.png')}}"/>
           <div id="u117_text" class="text " style="display:none; visibility: hidden">
             <p></p>
           </div>
@@ -221,7 +262,7 @@
 
         <!-- Unnamed (Table Cell) -->
         <div id="u118" class="ax_default table_cell">
-          <img id="u118_img" class="img " src="images/performance/u113.png"/>
+          <img id="u118_img" class="img " src="{{url_for('static',filename='images/performance/u113.png')}}"/>
           <div id="u118_text" class="text " style="display:none; visibility: hidden">
             <p></p>
           </div>
@@ -229,7 +270,7 @@
 
         <!-- Unnamed (Table Cell) -->
         <div id="u119" class="ax_default table_cell">
-          <img id="u119_img" class="img " src="images/performance/u119.png"/>
+          <img id="u119_img" class="img " src="{{url_for('static',filename='images/performance/u119.png')}}"/>
           <div id="u119_text" class="text " style="display:none; visibility: hidden">
             <p></p>
           </div>
@@ -257,7 +298,7 @@
 
         <!-- Unnamed (Table Cell) -->
         <div id="u123" class="ax_default table_cell">
-          <img id="u123_img" class="img " src="images/performance/u123.png"/>
+          <img id="u123_img" class="img " src="{{url_for('static',filename='images/performance/u123.png')}}"/>
           <div id="u123_text" class="text ">
             <p><span>Hero ID</span></p>
           </div>
@@ -265,7 +306,7 @@
 
         <!-- Unnamed (Table Cell) -->
         <div id="u124" class="ax_default table_cell">
-          <img id="u124_img" class="img " src="images/performance/u124.png"/>
+          <img id="u124_img" class="img " src="{{url_for('static',filename='images/performance/u124.png')}}"/>
           <div id="u124_text" class="text ">
             <p><span>Hero Name</span></p>
           </div>
@@ -273,37 +314,40 @@
 
         <!-- Unnamed (Table Cell) -->
         <div id="u125" class="ax_default table_cell">
-          <img id="u125_img" class="img " src="images/performance/u125.png"/>
+          <img id="u125_img" class="img " src="{{url_for('static',filename='images/performance/u125.png')}}"/>
           <div id="u125_text" class="text ">
             <p><span>Performance Level</span></p>
           </div>
         </div>
-
+        {% for i in users['hid'] %}
         <!-- Unnamed (Table Cell) -->
         <div id="u126" class="ax_default table_cell">
-          <img id="u126_img" class="img " src="images/performance/u126.png"/>
+          <img id="u126_img" class="img " src="{{url_for('static',filename='images/performance/u126.png')}}"/>
           <div id="u126_text" class="text ">
-            <p><span>1</span></p>
+            <p><span>{i}</span></p>
           </div>
         </div>
-
+        {% endfor %}
+        {% for i in users['heroname'] %}
         <!-- Unnamed (Table Cell) -->
         <div id="u127" class="ax_default table_cell">
-          <img id="u127_img" class="img " src="images/performance/u127.png"/>
+          <img id="u127_img" class="img " src="{{url_for('static',filename='images/performance/u127.png')}}"/>
           <div id="u127_text" class="text ">
-            <p><span>Abbadon</span></p>
+            <p><span>{i}</span></p>
           </div>
         </div>
+        {%endfor %}
 
+        {% for i in users['heroname'] %}
         <!-- Unnamed (Table Cell) -->
         <div id="u128" class="ax_default table_cell">
-          <img id="u128_img" class="img " src="images/performance/u128.png"/>
-          <div id="u128_text" class="text " style="display:none; visibility: hidden">
-            <p></p>
+          <img id="u128_img" class="img " src="{{url_for('static',filename='images/performance/u128.png')}}"/>
+          <div id="u128_text" class="text" >
+            <p><span>{i}</span></p>
           </div>
         </div>
       </div>
-
+      {%endfor%}
       <!-- Unnamed (Rectangle) -->
       <div id="u129" class="ax_default heading_2">
         <div id="u129_div" class=""></div>
@@ -312,38 +356,7 @@
         </div>
       </div>
 
-      <!-- Unnamed (Rectangle) -->
-      <div id="u130" class="ax_default heading_2">
-        <div id="u130_div" class=""></div>
-        <div id="u130_text" class="text ">
-          <p><span>PERFORMANCE</span></p>
-        </div>
-      </div>
 
-      <!-- Unnamed (Rectangle) -->
-      <div id="u131" class="ax_default heading_2">
-        <div id="u131_div" class=""></div>
-        <div id="u131_text" class="text ">
-          <p><span>MATCH DETAILS</span></p>
-        </div>
-      </div>
-
-      <!-- Unnamed (Rectangle) -->
-      <div id="u132" class="ax_default heading_2">
-        <div id="u132_div" class=""></div>
-        <div id="u132_text" class="text ">
-          <p><span>HOME</span></p>
-        </div>
-      </div>
-
-      <!-- Unnamed (Rectangle) -->
-      <div id="u133" class="ax_default heading_2">
-        <div id="u133_div" class=""></div>
-        <div id="u133_text" class="text ">
-          <p><span>HERO ANALYSIS</span></p>
-        </div>
-      </div>
-    </div>
-    <script src="resources/scripts/axure/ios.js"></script>
+    <script src="{{ url_for('static',filename='resources/scripts/axure/ios.js') }}"></script>
   </body>
 </html>

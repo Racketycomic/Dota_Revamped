@@ -58,13 +58,14 @@ class matchbar(FlaskForm):
     matchinfo = SubmitField("GETMATCH")
     matchid = IntegerField("Match ID", validators=[DataRequired()])
 
-    def validate_matchid(self,matchid):
+    def validate_matchid(self, matchid):
         req = requests.get(f"https://api.opendota.com/api/matches/{matchid.data}")
         js = req.json()
         print(js)
         for key, values in js.items():
             if key == "error":
                 raise ValidationError("Please enter a valid MatchID")
+
 
 class heroname(FlaskForm):
     heroclick = SubmitField("Search")

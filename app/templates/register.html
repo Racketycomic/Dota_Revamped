@@ -6,7 +6,7 @@
     <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
     <link href= "{{url_for('static',filename='resources/css/axure_rp_page.css')}}" type="text/css" rel="stylesheet"/>
     <link href="{{url_for('static',filename='data/styles.css')}}" type="text/css" rel="stylesheet"/>
-    <link href="{{url_for('static',filename='files/homepage_blog/styles.css')}}" type="text/css" rel="stylesheet"/>
+    <link href="{{url_for('static',filename='files/register/styles.css')}}" type="text/css" rel="stylesheet"/>
     <script src="{{url_for('static',filename='resources/scripts/jquery-3.2.1.min.js')}}"></script>
     <script src="{{url_for('static',filename='resources/scripts/axure/axQuery.js')}}"></script>
     <script src="{{url_for('static',filename='resources/scripts/axure/globals.js')}}"></script>
@@ -38,7 +38,7 @@
     <script src="{{url_for('static',filename='resources/scripts/axure/math.js')}}"></script>
     <script src="{{url_for('static',filename='resources/scripts/axure/jquery.nicescroll.min.js')}}"></script>
     <script src="{{url_for('static',filename='data/document.js')}}"></script>
-    <script src="{{url_for('static',filename='files/homepage_blog/data.js')}}"></script>
+    <script src="{{url_for('static',filename='files/register/data.js')}}"></script>
     <script type="text/javascript">
     $axure.utils.getTransparentGifPath = function() { return "{{url_for('static',filename='resources/images/transparent.gif')}}"; };
     $axure.utils.getOtherPath = function() { return "{{url_for('static',filename='resources/Other.html')}}"; };
@@ -50,7 +50,7 @@
 
       <!-- Unnamed (Image) -->
       <div id="u76" class="ax_default image">
-        <img id="u76_img" class="img " src="images/homepage_blog/u0.jpg"/>
+        <img id="u76_img" class="img " src="{{url_for('static',filename='images/homepage_blog/u0.jpg')}}"/>
         <div id="u76_text" class="text " style="display:none; visibility: hidden">
           <p></p>
         </div>
@@ -58,7 +58,7 @@
 
       <!-- Unnamed (Image) -->
       <div id="u77" class="ax_default image">
-        <img id="u77_img" class="img " src="images/homepage_blog/u3.png"/>
+        <img id="u77_img" class="img " src="{{url_for('static',filename='images/homepage_blog/u3.png')}}"/>
         <div id="u77_text" class="text " style="display:none; visibility: hidden">
           <p></p>
         </div>
@@ -74,7 +74,7 @@
 
       <!-- Unnamed (Image) -->
       <div id="u79" class="ax_default image">
-        <img id="u79_img" class="img " src="images/homepage_blog/u8.jpg"/>
+        <img id="u79_img" class="img " src="{{url_for('static',filename='images/homepage_blog/u8.jpg')}}"/>
         <div id="u79_text" class="text " style="display:none; visibility: hidden">
           <p></p>
         </div>
@@ -82,7 +82,7 @@
 
       <!-- Unnamed (Image) -->
       <div id="u80" class="ax_default image">
-        <img id="u80_img" class="img " src="images/homepage_blog/u21.png"/>
+        <img id="u80_img" class="img " src="{{url_for('static',filename='images/homepage_blog/u21.png')}}"/>
         <div id="u80_text" class="text " style="display:none; visibility: hidden">
           <p></p>
         </div>
@@ -114,7 +114,7 @@
 
       <!-- Unnamed (Shape) -->
       <div id="u84" class="ax_default icon">
-        <img id="u84_img" class="img " src="images/login/u64.svg"/>
+        <img id="u84_img" class="img " src="{{url_for('static',filename='images/login/u64.svg')}}"/>
         <div id="u84_text" class="text " style="display:none; visibility: hidden">
           <p></p>
         </div>
@@ -131,9 +131,9 @@
       <!-- Unnamed (Text Field) -->
       <div id="u86" class="ax_default text_field">
         <div id="u86_div" class=""></div>
-        {{form.username(id="u86_input",type="text",value="",class="u86_input",placeholder="Username")}}
+        {{ form.username(id="u86_input",type="text",value="",class="u86_input",placeholder="Username") }}
 					<span></span>
-					{% for error in form.username.errors%}
+					{% for error in form.username.errors %}
 						[{{error}}]
 						{% endfor %}
       </div>
@@ -141,7 +141,7 @@
       <!-- Unnamed (Text Field) -->
       <div id="u87" class="ax_default text_field">
         <div id="u87_div" class=""></div>
-        {{form.email(id="u87_input",type="text",value="",class="u87_input",placeholder="Email")}}
+        {{ form.email(id="u87_input",type="text",value="",class="u87_input",placeholder="Email") }}
 					<span ></span>
 							{% for error in form.email.errors%}
 						[{{error}}]
@@ -159,11 +159,11 @@
       <!-- Unnamed (Text Field) -->
       <div id="u89" class="ax_default text_field">
         <div id="u89_div" class=""></div>
-        {{form.id(class="input100",placeholder="Player ID")}}
+        {{ form.id(class="input100",placeholder="Player ID") }}
 					  <span ></span>
 						{% for error in form.id.errors%}
 						<span class="focus-input100" ></span>
-						[{{error}}]
+						[{{ error }}]
 						{% endfor %}
         <input id="u89_input" type="text" value="" class="u89_input"/>
       </div>
@@ -171,12 +171,12 @@
       <!-- Unnamed (Text Field) -->
       <div id="u90" class="ax_default text_field">
         <div id="u90_div" class=""></div>
-        {form.password(id="u90_input",type="text",value="",class="u90_input",placeholder="Password")}}
+        {{form.password(id="u90_input",type="text",value="",class="u90_input",placeholder="Password")}}
 							<span class="ax_default text_field" data-placeholder="&#xf191;"></span>
 
 					{% for error in form.password.errors%}
 						<span class="ax_default text_field"></span>
-						[{{error}}]
+						[{{ error }}]
 						{% endfor %}
       <!--  <input id="u90_input" type="text" value="" class="u90_input"/> -->
       </div>
@@ -195,7 +195,7 @@
       <div id="u92" class="ax_default heading_2">
         <div id="u92_div" class=""></div>
         <div id="u92_text" class="text ">
-          <p><span><a href="{{url_for('performance')}}">PERFORMANCE</a></span></p>
+          <p><span><a href="{{ url_for('performance')  }}">PERFORMANCE</a></span></p>
         </div>
       </div>
 
@@ -203,7 +203,7 @@
       <div id="u93" class="ax_default heading_2">
         <div id="u93_div" class=""></div>
         <div id="u93_text" class="text ">
-          <p><span><a href="{{url_for('mids')}}"> MATCH DETAILS</a></span></p>
+          <p><span><a href="{{ url_for('mids') }}"> MATCH DETAILS</a></span></p>
         </div>
       </div>
 
@@ -211,7 +211,7 @@
       <div id="u94" class="ax_default heading_2">
         <div id="u94_div" class=""></div>
         <div id="u94_text" class="text ">
-          <p><span><a href="{{url_for('index')}}">HOME</span></a></p>
+          <p><span><a href="{{ url_for('index') }}">HOME</span></a></p>
         </div>
       </div>
 
@@ -219,10 +219,10 @@
       <div id="u95" class="ax_default heading_2">
         <div id="u95_div" class=""></div>
         <div id="u95_text" class="text ">
-          <p><span><a href="{{url_for('hernoname')}}">HERO SEARCH</a></span></p>
+        <p><span><a href="{{url_for('herosearch')}}">HERO ANALYSIS</span></p>
         </div>
       </div>
     </div>
-    <script src="resources/scripts/axure/ios.js"></script>
+    <script src="{{ url_for('static',filename='resources/scripts/axure/ios.js') }}"></script>
   </body>
 </html>

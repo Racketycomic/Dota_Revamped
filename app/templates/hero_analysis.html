@@ -4,45 +4,45 @@
     <title>Hero Analysis</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
-    <link href="resources/css/axure_rp_page.css" type="text/css" rel="stylesheet"/>
-    <link href="data/styles.css" type="text/css" rel="stylesheet"/>
-    <link href="files/hero_analysis/styles.css" type="text/css" rel="stylesheet"/>
-    <script src="resources/scripts/jquery-3.2.1.min.js"></script>
-    <script src="resources/scripts/axure/axQuery.js"></script>
-    <script src="resources/scripts/axure/globals.js"></script>
-    <script src="resources/scripts/axutils.js"></script>
-    <script src="resources/scripts/axure/annotation.js"></script>
-    <script src="resources/scripts/axure/axQuery.std.js"></script>
-    <script src="resources/scripts/axure/doc.js"></script>
-    <script src="resources/scripts/messagecenter.js"></script>
-    <script src="resources/scripts/axure/events.js"></script>
-    <script src="resources/scripts/axure/recording.js"></script>
-    <script src="resources/scripts/axure/action.js"></script>
-    <script src="resources/scripts/axure/expr.js"></script>
-    <script src="resources/scripts/axure/geometry.js"></script>
-    <script src="resources/scripts/axure/flyout.js"></script>
-    <script src="resources/scripts/axure/model.js"></script>
-    <script src="resources/scripts/axure/repeater.js"></script>
-    <script src="resources/scripts/axure/sto.js"></script>
-    <script src="resources/scripts/axure/utils.temp.js"></script>
-    <script src="resources/scripts/axure/variables.js"></script>
-    <script src="resources/scripts/axure/drag.js"></script>
-    <script src="resources/scripts/axure/move.js"></script>
-    <script src="resources/scripts/axure/visibility.js"></script>
-    <script src="resources/scripts/axure/style.js"></script>
-    <script src="resources/scripts/axure/adaptive.js"></script>
-    <script src="resources/scripts/axure/tree.js"></script>
-    <script src="resources/scripts/axure/init.temp.js"></script>
-    <script src="resources/scripts/axure/legacy.js"></script>
-    <script src="resources/scripts/axure/viewer.js"></script>
-    <script src="resources/scripts/axure/math.js"></script>
-    <script src="resources/scripts/axure/jquery.nicescroll.min.js"></script>
-    <script src="data/document.js"></script>
-    <script src="files/hero_analysis/data.js"></script>
+    <link href= "{{url_for('static',filename='resources/css/axure_rp_page.css')}}" type="text/css" rel="stylesheet"/>
+    <link href="{{url_for('static',filename='data/styles.css')}}" type="text/css" rel="stylesheet"/>
+    <link href="{{url_for('static',filename='files/hero_analysis/styles.css')}}" type="text/css" rel="stylesheet"/>
+    <script src="{{url_for('static',filename='resources/scripts/jquery-3.2.1.min.js')}}"></script>
+    <script src="{{url_for('static',filename='resources/scripts/axure/axQuery.js')}}"></script>
+    <script src="{{url_for('static',filename='resources/scripts/axure/globals.js')}}"></script>
+    <script src="{{url_for('static',filename='resources/scripts/axutils.js')}}"></script>
+    <script src="{{url_for('static',filename='resources/scripts/axure/annotation.js')}}"></script>
+    <script src="{{url_for('static',filename='resources/scripts/axure/axQuery.std.js')}}"></script>
+    <script src="{{url_for('static',filename='resources/scripts/axure/doc.js')}}"></script>
+    <script src="{{url_for('static',filename='resources/scripts/messagecenter.js')}}"></script>
+    <script src="{{url_for('static',filename='resources/scripts/axure/events.js')}}"></script>
+    <script src="{{url_for('static',filename='resources/scripts/axure/recording.js')}}"></script>
+    <script src="{{url_for('static',filename='resources/scripts/axure/action.js')}}"></script>
+    <script src="{{url_for('static',filename='resources/scripts/axure/expr.js')}}"></script>
+    <script src="{{url_for('static',filename='resources/scripts/axure/geometry.js')}}"></script>
+    <script src="{{url_for('static',filename='resources/scripts/axure/flyout.js')}}"></script>
+    <script src="{{url_for('static',filename='resources/scripts/axure/model.js')}}"></script>
+    <script src="{{url_for('static',filename='resources/scripts/axure/repeater.js')}}"></script>
+    <script src="{{url_for('static',filename='resources/scripts/axure/sto.js')}}"></script>
+    <script src="{{url_for('static',filename='resources/scripts/axure/utils.temp.js')}}"></script>
+    <script src="{{url_for('static',filename='resources/scripts/axure/variables.js')}}"></script>
+    <script src="{{url_for('static',filename='resources/scripts/axure/drag.js')}}"></script>
+    <script src="{{url_for('static',filename='resources/scripts/axure/move.js')}}"></script>
+    <script src="{{url_for('static',filename='resources/scripts/axure/visibility.js')}}"></script>
+    <script src="{{url_for('static',filename='resources/scripts/axure/style.js')}}"></script>
+    <script src="{{url_for('static',filename='resources/scripts/axure/adaptive.js')}}"></script>
+    <script src="{{url_for('static',filename='resources/scripts/axure/tree.js')}}"></script>
+    <script src="{{url_for('static',filename='resources/scripts/axure/init.temp.js')}}"></script>
+    <script src="{{url_for('static',filename='resources/scripts/axure/legacy.js')}}"></script>
+    <script src="{{url_for('static',filename='resources/scripts/axure/viewer.js')}}"></script>
+    <script src="{{url_for('static',filename='resources/scripts/axure/math.js')}}"></script>
+    <script src="{{url_for('static',filename='resources/scripts/axure/jquery.nicescroll.min.js')}}"></script>
+    <script src="{{url_for('static',filename='data/document.js')}}"></script>
+    <script src="{{url_for('static',filename='files/hero_analysis/data.js')}}"></script>
     <script type="text/javascript">
-      $axure.utils.getTransparentGifPath = function() { return 'resources/images/transparent.gif'; };
-      $axure.utils.getOtherPath = function() { return 'resources/Other.html'; };
-      $axure.utils.getReloadPath = function() { return 'resources/reload.html'; };
+      $axure.utils.getTransparentGifPath = function() { return "{{url_for('static',filename='resources/images/transparent.gif')}}"; };
+      $axure.utils.getOtherPath = function() { return "{{url_for('static',filename='resources/Other.html')}}"; };
+      $axure.utils.getReloadPath = function() { return "{{url_for('static',filename='resources/reload.html')}}"; };
     </script>
   </head>
   <body>
@@ -50,7 +50,7 @@
 
       <!-- Unnamed (Image) -->
       <div id="u273" class="ax_default image">
-        <img id="u273_img" class="img " src="images/homepage_blog/u0.jpg"/>
+        <img id="u273_img" class="img " src="{{url_for('static',filename='images/homepage_blog/u0.jpg')}}"/>
         <div id="u273_text" class="text " style="display:none; visibility: hidden">
           <p></p>
         </div>
@@ -58,7 +58,7 @@
 
       <!-- Unnamed (Image) -->
       <div id="u274" class="ax_default image">
-        <img id="u274_img" class="img " src="images/homepage_blog/u2.jpg"/>
+        <img id="u274_img" class="img " src="{{url_for('static',filename='images/homepage_blog/u2.jpg')}}"/>
         <div id="u274_text" class="text " style="display:none; visibility: hidden">
           <p></p>
         </div>
@@ -66,7 +66,7 @@
 
       <!-- Unnamed (Image) -->
       <div id="u275" class="ax_default image">
-        <img id="u275_img" class="img " src="images/homepage_blog/u3.png"/>
+        <img id="u275_img" class="img " src="{{url_for('static',filename='images/homepage_blog/u3.png')}}"/>
         <div id="u275_text" class="text " style="display:none; visibility: hidden">
           <p></p>
         </div>
@@ -82,7 +82,7 @@
 
       <!-- Unnamed (Image) -->
       <div id="u277" class="ax_default image">
-        <img id="u277_img" class="img " src="images/homepage_blog/u8.jpg"/>
+        <img id="u277_img" class="img " src="{{url_for('static',filename='images/homepage_blog/u8.jpg')}}"/>
         <div id="u277_text" class="text " style="display:none; visibility: hidden">
           <p></p>
         </div>
@@ -98,7 +98,7 @@
 
       <!-- Unnamed (Image) -->
       <div id="u279" class="ax_default image">
-        <img id="u279_img" class="img " src="images/homepage_blog/u21.png"/>
+        <img id="u279_img" class="img " src="{{url_for('static',filename='images/homepage_blog/u21.png')}}"/>
         <div id="u279_text" class="text " style="display:none; visibility: hidden">
           <p></p>
         </div>
@@ -124,6 +124,7 @@
       <div id="u282" class="ax_default button">
         <div id="u282_div" class=""></div>
         <div id="u282_text" class="text ">
+          {{form.heroclick(class="ax_default button")}}
           <p><span>SUBMIT</span></p>
         </div>
       </div>
@@ -132,7 +133,7 @@
       <div id="u283" class="ax_default heading_2">
         <div id="u283_div" class=""></div>
         <div id="u283_text" class="text ">
-          <p><span>LOGOUT</span></p>
+          <p><span><a href="{{url_for('logout')}}">LOGOUT</a></span></p>
         </div>
       </div>
 
@@ -140,7 +141,7 @@
       <div id="u284" class="ax_default heading_2">
         <div id="u284_div" class=""></div>
         <div id="u284_text" class="text ">
-          <p><span>PERFORMANCE</span></p>
+          <p><span><a href="{{url_for('performance')}}">PERFORMANCE</a></span></p>
         </div>
       </div>
 
@@ -148,7 +149,7 @@
       <div id="u285" class="ax_default heading_2">
         <div id="u285_div" class=""></div>
         <div id="u285_text" class="text ">
-          <p><span>MATCH DETAILS</span></p>
+      <p><span><a href="{{url_for('mids')}}"> MATCH DETAILS</a></span></p>
         </div>
       </div>
 
@@ -156,7 +157,7 @@
       <div id="u286" class="ax_default heading_2">
         <div id="u286_div" class=""></div>
         <div id="u286_text" class="text ">
-          <p><span>HOME</span></p>
+          <p><span><a href="{{url_for('index')}}">HOME</span></a></p>
         </div>
       </div>
 
@@ -164,16 +165,19 @@
       <div id="u287" class="ax_default heading_2">
         <div id="u287_div" class=""></div>
         <div id="u287_text" class="text ">
-          <p><span>HERO ANALYSIS</span></p>
+      <p><span><a href="{{url_for('herosearch')}}">HERO ANALYSIS</span></p>
         </div>
       </div>
 
       <!-- Unnamed (Text Field) -->
       <div id="u288" class="ax_default text_field">
         <div id="u288_div" class=""></div>
-        <input id="u288_input" type="text" value="" class="u288_input"/>
+      {form.hero(id="u288_input" type="text" value="" class="u288_input",placeholder="Hero name")}}<br>
+      {% for error in form.hero.errors %}
+      <span>[{{error}}]</span>
+      {% endfor %}
       </div>
     </div>
-    <script src="resources/scripts/axure/ios.js"></script>
+    <script src="{{url_for('static',filename='resources/scripts/axure/ios.js')}}"></script>
   </body>
 </html>
