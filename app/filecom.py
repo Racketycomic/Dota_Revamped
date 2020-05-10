@@ -7,7 +7,7 @@ import os
 class fil():
 
     def matchwrite(self, matchid):
-        playermatch = os.join.path("F:\\drev\\app\\files", "playermatch.txt")
+        playermatch = os.path.join("F:\\drev\\app\\files", "playermatch.txt")
         mongoresult = db.playermatch.find_one({"_id": matchid})
         mresultstr = json.dumps(mongoresult, indent=-1)
         pmfile = open(playermatch, "a+")
@@ -23,7 +23,7 @@ class fil():
         return (q)
 
     def matchread(self, matchid):
-        playermatch_index = os.join.path("F:\\drev\\app\\files",
+        playermatch_index = os.path.join("F:\\drev\\app\\files",
                                          "playermatch_index.txt")
         indexfile = open(playermatch_index, "r+")
         rstring = indexfile.read()
@@ -74,16 +74,18 @@ class fil():
         secondarkey.close()
 
     def deleterecord(self,matchid):
-        playermatch = os.join.path("F:\\drev\\app\\files", "playermatch.txt")
-        with open(playermatch,"r+") as file:
+        playermatch = os.path.join("F:\\drev\\app\\files", "playermatch.txt")
+        with open(playermatch, "r+") as file:
             rstring = file.read()
             rstring = rstring[:-2]
             rstring = '['+rstring+']'
             rdict = yaml.safe_load(rstring)
-            for index,items in enumerate(rdict):
+            for index, items in enumerate(rdict):
                 if items['_id'] == matchid:
                     rdict.pop(index)
 
             result = json.dumps(rdict, indent=-1)
-            result = result[1:-1]
-            result = result + "{"
+            result = result[2:-1]
+            result = result + ","
+            with open(playermatch, "w+") as file:
+                file.write(result)

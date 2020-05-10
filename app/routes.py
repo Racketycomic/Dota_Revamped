@@ -1,16 +1,23 @@
 from app import app
 from flask import render_template, url_for, redirect
 from app import dbservices as db
-from flask_login import current_user, login_user, logout_user
-from app.forms import LoginForm, RegisterForm, matchbar
+from flask_login import current_user, login_user, logout_user, login_required
+from app.forms import LoginForm, RegisterForm, matchbar, heroname
 from app.sift import playertable, matchtable
 import logging
+import os
+import yaml
+
 
 @app.route('/')
 @app.route('/index', methods=['POST', 'GET'])
 def index():
-    return render_template('index.html')
+    return render_template('homepage_blog.html')
 
+
+@app.route('/update', methods=['POST', 'GET'])
+def update():
+    return render_template('homepage_updates.html')
 
 def login():
     flag1 = 0
@@ -57,6 +64,7 @@ def logout():
     return redirect(url_for('index'))
 
 
+@login_required
 @app.route('/performance', methods=['GET', 'POST'])
 def performance():
     id = current_user.get_id()
@@ -65,13 +73,14 @@ def performance():
     return render_template('performance.html', user=user)
 
 
+@login_required
 @app.route('/mids', methods=['POST', 'GET'])
 def mids():
     form = matchbar()
     matches = form.matchid.data
     if form.validate_on_submit():
         return redirect('midswid/'+str(matches))
-    return render_template('newmatch.html', form=form)
+    return render_template('match_id_analysis.html', form=form)
 
 
 @app.route('/midswid/<int:matches>', methods=["POST", "GET"])
@@ -109,7 +118,7 @@ def midswid(matches):
                                   "team": {"$slice": -5}, "result": {"$slice": -5},
                                   "heroname": {"$slice": -5}
                                     })
-        return render_template("matchtable.html", users=users, radiant=radiant, dire=dire)
+        return render_template("match_id_analysis_result.html", users=users, radiant=radiant, dire=dire)
 
 
     radiant = db.playermatch.find_one({"_id": matches},
@@ -132,8 +141,35 @@ def midswid(matches):
                               "team": {"$slice": -5}, "result": {"$slice": -5},
                               "heroname": {"$slice": -5}
                               })
-    return render_template("matchtable.html", users=users, radiant=radiant,
+    return render_template("match_id_analysis_result.html", users=users, radiant=radiant,
                            dire=dire)
+
+@login_required
+@app.route("/herosearch", methods=['POST', 'GET'])
+def herosearch():
+    form = heroname()
+    hname = form.hero.data
+    if form.validate_on_submit():
+        return (redirect("/heroname/"+str(hname)))
+    return render_template("hero_analysis.html")
+
+
+@app.route("/heroname/<str:hname>", methods=['POST', 'GET'])
+def hero():
+    form = heroname()
+    hname = form.hero.data
+    playermatch = os.path.join("F:\\drev\\app\\files", "player_match_sec_hero.txt")
+    with open(playermatch, "r+") as file:
+        rstring = file.read()
+        rstring = rstring[:-2]
+        rstring = '['+rstring+']'
+        rlist = yaml.safe_load(rstring)
+        hlist = []
+        for i in rlist:
+            for key,values in i.items():
+                if key == hname:
+                    hlist = values
+    return render_template("hero_analysis_result.html", hname=hname)
 
 
 logging.basicConfig(filename='app.log', filemode='a+')
