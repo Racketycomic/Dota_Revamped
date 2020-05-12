@@ -141,7 +141,7 @@ class playertable():
 class matchtable():
 
     def getmatch(self, matchid):
-        matchid=4305164363
+
         re5=requests.get(f"https://api.opendota.com/api/matches/{matchid}")
         js5=re5.json()
 
@@ -343,6 +343,7 @@ class matchtable():
 
         print(actwinstat)
 
+
         db.playermatch.insert_one({"_id": matchid, "playerid": playerids,
                                 "kill_count": kills, "death_count": death,
                                 "assist_count": assist, "kdaratio": kda,
@@ -350,6 +351,8 @@ class matchtable():
                                 "gpm": gpm, "team": teamstat,
                                 "result": actwinstat, "heroname": heronames}
                                )
+
+
         ########!!!!!!!!!!!!!!! ANA TABLE !!!!!!!!!!!!!! #########
         #re1=requests.get("https://api.opendota.com/api/players/311360822/rankings")
         #js1=re1.json()

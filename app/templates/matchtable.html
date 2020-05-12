@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <link href="{{url_for('static',filename='css/tabcss.css')}}" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+<link href="http://www.dota2.com/public/css/store.css?v=AAUevGOOGmqu" rel="stylesheet" type="text/css" >
+
+<style>
+.table {
+  width=50%;
+  border: 1px black solid;
+  align:center
+
+}
+td{
+  color: black;
+  background-color: white;
+  border:1px black solid;
+  font-size: 16px;
+  font-style: fancystyle12;
+}
+th {
+  font-size: 16px;
+  border: 1px white solid;
+  color: white;
+}
+
+a {
+  size: 18;
+  color: red;
+}
+p {
+  font-size: 44px;
+  color: white;
+  margin-top: 30px;
+}
+</style>
+
+
+
+  <title>Bootstrap Example</title>
+
+</head>
+<body class="MainBackgroundImage">
+
+<div class="container">
+  <table class="table w-auto table-bordered">
+  <center>  <p> Radiant</p> </center>
+    <tbody>
+
+      <tr>
+        <th>Username</th>
+        <th>Heroname</th>
+        <th>K</th>
+        <th>D</th>
+        <th>A</th>
+        <th>KDA</th>
+        <th>XPM</th>
+        <th>GPM</th>
+        <th>Result</th>
+
+      </tr>
+        {% for i in rlist %}
+      <tr>
+
+        {% for k in i %}
+
+        <td> {{k}} </td>
+
+{% endfor %}
+
+      </tr>
+  {% endfor %}
+
+    </tbody>
+
+  </table>
+
+  <table class="table w-auto table-bordered">
+    <center> <p>Dire</p> </center>
+    <tbody>
+      <tr>
+        <th>Username</th>
+        <th>Heroname</th>
+        <th>K</th>
+        <th>D</th>
+        <th>A</th>
+        <th>KDA</th>
+        <th>XPM</th>
+        <th>GPM</th>
+        <th>Result</th>
+
+      </tr>
+
+      {% for i in dlist %}
+      <tr>
+
+      {% for k in i %}
+
+        <td>{{k}} </td>
+
+        {% endfor %}
+
+
+      </tr>
+      {% endfor %}
+    </tbody>
+
+  </table>
+
+    <table class="table w-auto table-bordered">
+        <tbody>
+            <tr>
+                <th>MatchID</th>
+                <th>Total Kills</th>
+                <th>Total Assists</th>
+                <th>Total Deaths</th>
+                <th>Total Gold</th>
+                <th>Total Experience</th>
+                <th>Duration</th>
+                <th>Winner Team</th>
+            </tr>
+
+            <tr>
+                {% for key,values in users.items() %}
+                <td>{{values}} </td>
+                {% endfor %}
+
+            </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</div>
+<center>  <a href="{{url_for('mids')}}">Check a new Match</a></center>
+
+</body>
+</html>

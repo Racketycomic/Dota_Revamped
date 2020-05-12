@@ -1,186 +1,74 @@
-﻿<!DOCTYPE html>
-<html>
-  <head>
-    <title>Hero Analysis Result</title>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
-    <link href= "{{url_for('static',filename='resources/css/axure_rp_page.css')}}" type="text/css" rel="stylesheet"/>
-    <link href="{{url_for('static',filename='data/styles.css')}}" type="text/css" rel="stylesheet"/>
-    <link href="{{url_for('static',filename='files/hero_analysis_result/styles.css')}}" type="text/css" rel="stylesheet"/>
-    <script src="{{url_for('static',filename='resources/scripts/jquery-3.2.1.min.js')}}"></script>
-    <script src="{{url_for('static',filename='resources/scripts/axure/axQuery.js')}}"></script>
-    <script src="{{url_for('static',filename='resources/scripts/axure/globals.js')}}"></script>
-    <script src="{{url_for('static',filename='resources/scripts/axutils.js')}}"></script>
-    <script src="{{url_for('static',filename='resources/scripts/axure/annotation.js')}}"></script>
-    <script src="{{url_for('static',filename='resources/scripts/axure/axQuery.std.js')}}"></script>
-    <script src="{{url_for('static',filename='resources/scripts/axure/doc.js')}}"></script>
-    <script src="{{url_for('static',filename='resources/scripts/messagecenter.js')}}"></script>
-    <script src="{{url_for('static',filename='resources/scripts/axure/events.js')}}"></script>
-    <script src="{{url_for('static',filename='resources/scripts/axure/recording.js')}}"></script>
-    <script src="{{url_for('static',filename='resources/scripts/axure/action.js')}}"></script>
-    <script src="{{url_for('static',filename='resources/scripts/axure/expr.js')}}"></script>
-    <script src="{{url_for('static',filename='resources/scripts/axure/geometry.js')}}"></script>
-    <script src="{{url_for('static',filename='resources/scripts/axure/flyout.js')}}"></script>
-    <script src="{{url_for('static',filename='resources/scripts/axure/model.js')}}"></script>
-    <script src="{{url_for('static',filename='resources/scripts/axure/repeater.js')}}"></script>
-    <script src="{{url_for('static',filename='resources/scripts/axure/sto.js')}}"></script>
-    <script src="{{url_for('static',filename='resources/scripts/axure/utils.temp.js')}}"></script>
-    <script src="{{url_for('static',filename='resources/scripts/axure/variables.js')}}"></script>
-    <script src="{{url_for('static',filename='resources/scripts/axure/drag.js')}}"></script>
-    <script src="{{url_for('static',filename='resources/scripts/axure/move.js')}}"></script>
-    <script src="{{url_for('static',filename='resources/scripts/axure/visibility.js')}}"></script>
-    <script src="{{url_for('static',filename='resources/scripts/axure/style.js')}}"></script>
-    <script src="{{url_for('static',filename='resources/scripts/axure/adaptive.js')}}"></script>
-    <script src="{{url_for('static',filename='resources/scripts/axure/tree.js')}}"></script>
-    <script src="{{url_for('static',filename='resources/scripts/axure/init.temp.js')}}"></script>
-    <script src="{{url_for('static',filename='resources/scripts/axure/legacy.js')}}"></script>
-    <script src="{{url_for('static',filename='resources/scripts/axure/viewer.js')}}"></script>
-    <script src="{{url_for('static',filename='resources/scripts/axure/math.js')}}"></script>
-    <script src="{{url_for('static',filename='resources/scripts/axure/jquery.nicescroll.min.js')}}"></script>
-    <script src="{{url_for('static',filename='data/document.js')}}"></script>
-    <script src="{{url_for('static',filename='files/hero_analysis_result/data.js')}}"></script>
-    <script type="text/javascript">
-      $axure.utils.getTransparentGifPath = function() { return "{{url_for('static',filename='resources/images/transparent.gif')}}"; };
-      $axure.utils.getOtherPath = function() { return "{{url_for('static',filename='resources/Other.html')}}"; };
-      $axure.utils.getReloadPath = function() { return "{{url_for('static',filename='resources/reload.html')}}"; };
-    </script>
-  </head>
-  <body>
-    <div id="base" class="">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <link href="{{url_for('static',filename='css/tabcss.css')}}" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 
-      <!-- Unnamed (Image) -->
-      <div id="u289" class="ax_default image">
-        <img id="u289_img" class="img " src="images/homepage_blog/u0.jpg"/>
-        <div id="u289_text" class="text " style="display:none; visibility: hidden">
-          <p></p>
-        </div>
-      </div>
+<link href="http://www.dota2.com/public/css/store.css?v=AAUevGOOGmqu" rel="stylesheet" type="text/css" >
 
-      <!-- Unnamed (Image) -->
-      <div id="u290" class="ax_default image">
-        <img id="u290_img" class="img " src="images/homepage_blog/u2.jpg"/>
-        <div id="u290_text" class="text " style="display:none; visibility: hidden">
-          <p></p>
-        </div>
-      </div>
+<style>
+.table {
+  width=50%;
+  border: 1px black solid;
+  align:center
 
-      <!-- Unnamed (Image) -->
-      <div id="u291" class="ax_default image">
-        <img id="u291_img" class="img " src="images/homepage_blog/u3.png"/>
-        <div id="u291_text" class="text " style="display:none; visibility: hidden">
-          <p></p>
-        </div>
-      </div>
+}
+td{
+  color: black;
+  background-color: white;
+  border:1px black solid;
+  font-size: 16px;
+  font-style: fancystyle12;
+}
+th {
+  font-size: 16px;
+  border: 1px white solid;
+  color: white;
+}
 
-      <!-- Unnamed (Rectangle) -->
-      <div id="u292" class="ax_default heading_1">
-        <div id="u292_div" class=""></div>
-        <div id="u292_text" class="text ">
-          <p><span>Dota 2 Analytica</span></p>
-        </div>
-      </div>
-
-      <!-- Unnamed (Image) -->
-      <div id="u293" class="ax_default image">
-        <img id="u293_img" class="img " src="images/homepage_blog/u8.jpg"/>
-        <div id="u293_text" class="text " style="display:none; visibility: hidden">
-          <p></p>
-        </div>
-      </div>
-
-      <!-- Unnamed (Rectangle) -->
-      <div id="u294" class="ax_default box_1">
-        <div id="u294_div" class=""></div>
-        <div id="u294_text" class="text " style="display:none; visibility: hidden">
-          <p></p>
-        </div>
-      </div>
-
-      <!-- Unnamed (Image) -->
-      <div id="u295" class="ax_default image">
-        <img id="u295_img" class="img " src="images/homepage_blog/u21.png"/>
-        <div id="u295_text" class="text " style="display:none; visibility: hidden">
-          <p></p>
-        </div>
-      </div>
-
-      <!-- Unnamed (Rectangle) -->
-      <div id="u296" class="ax_default box_1">
-        <div id="u296_div" class=""></div>
-        <div id="u296_text" class="text ">
-          <p><span>HERO ANALYSIS</span></p>
-        </div>
-      </div>
+a {
+  size: 18;
+  color: red;
+}
+p {
+  font-size: 44px;
+  color: white;
+  margin-top: 30px;
+}
+</style>
 
 
 
-      <!-- Unnamed (Rectangle) -->
-      <div id="u299" class="ax_default heading_2">
-        <div id="u299_div" class=""></div>
-        <div id="u299_text" class="text ">
-          <p><span><a href="{{url_for('logout')}}">LOGOUT</a></span></p>
-        </div>
-      </div>
+  <title>Bootstrap Example</title>
 
-      <!-- Unnamed (Table) -->
-      <div id="u300" class="ax_default">
+</head>
+<body class="MainBackgroundImage">
 
-        <!-- Unnamed (Table Cell) -->
-        <div id="u301" class="ax_default table_cell">
-          <img id="u301_img" class="img " src="images/hero_analysis_result/u301.png"/>
-          <div id="u301_text" class="text ">
-            <p><span>Most Recent Matches Played (ID)</span></p>
-          </div>
-        </div>
-        {% for i in hlist %}
-        <!-- Unnamed (Table Cell) -->
-        <div id="u302" class="ax_default table_cell">
-          <img id="u302_img" class="img " src="images/hero_analysis_result/u302.png"/>
-          <div id="u302_text" class="text " style="display:none; visibility: hidden">
-            <p>{i}</p>
-          </div>
-        </div>
-      </div>
-      {% endfor %}
+<div class="container">
+  <table class="table w-auto table-bordered">
 
-      <!-- Unnamed (Rectangle) -->
-      <div id="u303" class="ax_default heading_2">
-        <div id="u303_div" class=""></div>
-        <div id="u303_text" class="text ">
-        <p><span><a href="{{url_for('performance')}}">PERFORMANCE</a></span></p>
-        </div>
-      </div>
+    <tbody>
 
-      <!-- Unnamed (Rectangle) -->
-      <div id="u304" class="ax_default heading_2">
-        <div id="u304_div" class=""></div>
-        <div id="u304_text" class="text ">
-          <p><span><a href="{{url_for('mids')}}"> MATCH DETAILS</a></span></p>
-        </div>
-      </div>
+      <tr>
+        <th>MatchID</th>
 
-      <!-- Unnamed (Rectangle) -->
-      <div id="u305" class="ax_default heading_2">
-        <div id="u305_div" class=""></div>
-        <div id="u305_text" class="text ">
-          <p><span><a href="{{url_for('index')}}">HOME</span></a></p>
-        </div>
-      </div>
+      </tr>
+        {% for i in rlist %}
+      <tr>
+        <td>   <td> <a href="{{url_for('midswid/<int:{{i}}>')}}" > {{i}} <//a></td>
+        </td>
 
-      <!-- Unnamed (Rectangle) -->
-      <div id="u306" class="ax_default heading_2">
-        <div id="u306_div" class=""></div>
-        <div id="u306_text" class="text ">
-          <p><span><a href="{{url_for('herosearch')}}">HERO ANALYSIS</span></p>
-        </div>
-      </div>
+      </tr>
+  {% endfor %}
 
-      <!-- Unnamed (Text Field) -->
-      <div id="u307" class="ax_default text_field">
-        <div id="u307_div" class=""></div>
-        <input id="u307_input" type="text" value="" class="u307_input"/>
-      </div>
-    </div>
-  <script src="{{url_for('static',filename='resources/scripts/axure/ios.js')}}"></script>
-  </body>
+    </tbody>
+
+  </table>
+
+
+<center>  <a href="{{url_for('mids')}}">Check a new Match</a></center>
+
+</body>
 </html>

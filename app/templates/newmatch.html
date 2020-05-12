@@ -1,0 +1,75 @@
+
+<head>
+     <link href="{{url_for('static',filename='css/tabcss.css')}}" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+<link href="http://www.dota2.com/public/css/store.css?v=AAUevGOOGmqu" rel="stylesheet" type="text/css" >
+<script type="text/javascript" async="" src="http://www.google-analytics.com/ga.js"></script>
+<script type="text/javascript" src="http://blog.dota2.com/wp-includes/js/jquery/jquery.js"></script>
+
+<link rel="shortcut icon" href="http://www.dota2.com/images/favicon.ico" type="image/x-icon">
+
+<title>Dota 2</title>
+
+<style>
+  div{
+    display: block;
+    text-align :center;
+    margin-top:200px;
+  }
+  p{
+    font-size:30px;
+    color:cyan;
+  }
+  .form-control {
+    display: block;
+    width: 40%;
+    height: 34px;
+    padding: 8px 12px;
+    font-size: 18px;
+    line-height: 1.42857143;
+    color: #584646;
+    background-image: none;
+  }
+  .fsSubmitButton
+{
+	border-top:		2px solid #a3ceda;
+	border-left:		2px solid #a3ceda;
+	border-right:		2px solid #4f6267;
+	border-bottom:		2px solid #4f6267;
+	padding:		10px 20px !important;
+	font-size:		14px !important;
+	background-color:	#c4f1fe;
+	font-weight:		bold;
+	color:			#2d525d;
+}
+  </style>
+
+
+  <title>Bootstrap Example</title>
+
+</head>
+
+<body class="MainBackgroundImage">
+  <div class="container">
+  <center><p>Enter Match ID </p><center>
+
+<form  action="" method="post">
+      {{form.hidden_tag()}}
+
+
+      {{form.matchid(class="form-control",placeholder="Match id")}}<br>
+      {% for error in form.matchid.errors %}
+      <span>[{{error}}]</span>
+      {% endfor %}
+
+      {{form.matchinfo(class="fsSubmitButton")}}<br>
+
+
+</form>
+
+
+</body>
+</html>
