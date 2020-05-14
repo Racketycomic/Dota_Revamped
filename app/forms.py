@@ -5,6 +5,7 @@ import requests
 from app import dbservices as db
 import os
 import yaml
+import json
 
 
 class matchbar(FlaskForm):
@@ -12,6 +13,7 @@ class matchbar(FlaskForm):
     matchid = IntegerField("Match ID", validators=[DataRequired()])
 
     def validate_matchid(self, matchid):
+
         req = requests.get(f"https://api.opendota.com/api/matches/{matchid.data}")
         js = req.json()
         print(js)
@@ -22,11 +24,15 @@ class matchbar(FlaskForm):
 
 class heroname(FlaskForm):
     heroclick = SubmitField("Search")
-    hero = StringField("Hero name", validators=[DataRequired()])
+    hero = StringField("Heroname", validators=[DataRequired()])
 
     def validate_hero(self, hero):
+        t=0
         playermatch = os.path.join("F:\\drev\\app\\files", "player_match_sec_hero.txt")
-        j = 0
+        match = os.path.join("F:\\drev\\app\\files", "playermatch1.txt")
+        mlist = []
+        j = False
+        flag = 0
         with open(playermatch, "r+") as file:
             rstring = file.read()
             rstring = rstring[:-2]
@@ -35,7 +41,38 @@ class heroname(FlaskForm):
             for i in rlist:
                 for key, values in i.items():
                     if key == hero.data:
-                        j = 1
+                        j = True
+                        flag = 0
                         break
+        print(j)
         if not j:
-            raise ValidationError("Hero not available")
+            with open(match,"r+") as file:
+                rstring = file.read()
+                rstring = rstring[:-2]
+                rstring = '['+rstring+']'
+                rlist = yaml.safe_load(rstring)
+                for k in rlist:
+                    for key, values in k.items():
+                        if key == "_id":
+                            mid = values
+                        if key == "heroname":
+                            for u in values:
+                                if u == hero.data:
+                                    mlist.append(mid)
+                                    continue
+            for index, items in enumerate(mlist):
+                for index1, items1 in enumerate(mlist):
+                    if index == index1:
+                        pass
+                    if items == items1:
+                        mlist.pop(index)
+            print(mlist)
+            mdict ={hero.data:mlist}
+            mdict = json.dumps(mdict, indent=-1)
+            type(mdict)
+            with open(playermatch, "a+") as file:
+                file.write(mdict+"\n,\n")
+            if len(mlist) == 0:
+                flag = 1
+        if flag:
+            raise ValidationError("Hero is not present")

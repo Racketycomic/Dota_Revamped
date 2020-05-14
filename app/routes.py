@@ -117,7 +117,7 @@ def midswid(matches):
             list1=[]
             i=i+ 1
 
-        return render_template("matchtable.html", users=users, rlist = rlist, dlist=dlist)
+        return render_template("matchtable.html", rlist = rlist, dlist=dlist)
 
     radiant = db.playermatch.find_one({"_id": matches},
                              {"playerid": {"$slice": 5} , "kill_count": {"$slice": 5},
@@ -194,3 +194,33 @@ def midswid(matches):
 
     return render_template("matchtable.html", users=users, rlist=rlist,
                            dlist=dlist)
+
+
+@app.route("/herosearch", methods=['POST', 'GET'])
+def herosearch():
+    form = heroname()
+    hero = form.hero.data
+    if form.validate_on_submit():
+        return (redirect("/heroname/"+str(hero)))
+    return render_template("hero_analysis.html", form=form)
+
+
+@app.route("/heroname/<string:hero>", methods=['POST', 'GET'])
+def heros(hero):
+    hname =hero
+
+    playermatch = os.path.join("F:\\drev\\app\\files", "player_match_sec_hero.txt")
+    with open(playermatch, "r+") as file:
+        rstring = file.read()
+        rstring = rstring[:-2]
+        rstring = '['+rstring+']'
+        rlist = yaml.safe_load(rstring)
+        hlist = []
+        for i in rlist:
+            for key, values in i.items():
+                if key == hname:
+                    hlist = values
+    print(hlist)
+    return render_template("hero_analysis_result.html", hlist=hlist)
+
+logging.basicConfig(filename='app.log', filemode='a+')

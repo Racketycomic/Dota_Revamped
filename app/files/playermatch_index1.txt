@@ -1,0 +1,28 @@
+{
+"matchid": 5400713869,
+"spos": 0,
+"size": 954,
+"threshold": 0.1875
+}
+,
+{
+"matchid": 5161017438,
+"spos": 920,
+"size": 954,
+"threshold": 0.1875
+}
+,
+{
+"matchid": 5409314519,
+"spos": 1840,
+"size": 954,
+"threshold": 0.1875
+}
+,
+{
+"matchid": 5260768243,
+"spos": 2760,
+"size": 954,
+"threshold": 0.1875
+}
+,

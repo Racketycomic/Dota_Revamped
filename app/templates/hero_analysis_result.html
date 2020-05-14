@@ -41,7 +41,7 @@ p {
 
 
 
-  <title>Bootstrap Example</title>
+  <title>Hero TABle</title>
 
 </head>
 <body class="MainBackgroundImage">
@@ -55,10 +55,10 @@ p {
         <th>MatchID</th>
 
       </tr>
-        {% for i in rlist %}
+        {% for i in hlist %}
       <tr>
-        <td>   <td> <a href="{{url_for('midswid/<int:{{i}}>')}}" > {{i}} <//a></td>
-        </td>
+        <td>   {{i}}   </td>
+
 
       </tr>
   {% endfor %}

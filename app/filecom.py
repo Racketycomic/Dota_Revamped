@@ -3,7 +3,6 @@ import json
 import yaml
 import os
 
-
 class fil():
 
     def matchwrite(self, matchid):

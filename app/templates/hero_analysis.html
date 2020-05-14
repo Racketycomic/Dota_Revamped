@@ -54,14 +54,14 @@
 
 <body class="MainBackgroundImage">
   <div class="container">
-  <center><p>Enter Match ID </p><center>
+  <center><p>Enter Hero Name </p><center>
 
 <form  action="" method="post">
       {{form.hidden_tag()}}
 
 
-      {{form.hero(class="form-control",placeholder="Match id")}}<br>
-      {% for error in form.matchid.errors %}
+      {{form.hero(class="form-control",placeholder="HeroName")}}<br>
+      {% for error in form.hero.errors %}
       <span>[{{error}}]</span>
       {% endfor %}
 
