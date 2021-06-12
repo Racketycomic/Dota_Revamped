@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Sign Up V3</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!--===============================================================================================-->
+		<link rel="icon" type="image/png" href="{{url_for('static',filename='images/icons/favicon.ico')}}"/>
+	<!--===============================================================================================-->
+		<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='vendor/bootstrap/css/bootstrap.min.css')}}">
+	<!--===============================================================================================-->
+		<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='fonts/font-awesome-4.7.0/css/font-awesome.min.css')}}">
+	<!--===============================================================================================-->
+		<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='fonts/iconic/css/material-design-iconic-font.min.css')}}">
+	<!--===============================================================================================-->
+		<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='vendor/animate/animate.css')}}">
+	<!--===============================================================================================-->
+		<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='vendor/css-hamburgers/hamburgers.min.css')}}">
+	<!--===============================================================================================-->
+		<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='vendor/animsition/css/animsition.min.css')}}">
+	<!--===============================================================================================-->
+		<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='vendor/select2/select2.min.css')}}">
+	<!--===============================================================================================-->
+		<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='vendor/daterangepicker/daterangepicker.css')}}">
+	<!--===============================================================================================-->
+		<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/util.css')}}">
+		<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/main.css')}}">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css"  href="{{url_for('static',filename='css/dota.css')}}">
+	<link id="wpml-legacy-vertical-list-0-inline-css" type="text/css" rel="stylesheet" href="{{url_for('static',filename='css/dota2.css')}}">
+	<script type="text/javascript" async="" src="http://www.google-analytics.com/ga.js"></script>
+	<script type="text/javascript" src="http://blog.dota2.com/wp-includes/js/jquery/jquery.js"></script>
+
+	<link rel="shortcut icon" href="http://www.dota2.com/images/favicon.ico" type="image/x-icon">
+
+	<title>Dota 2</title>
+
+</head>
+<body>
+
+
+	<div class="limiter">
+		<div class="container-login100" style="background-image: url('images/bg-01.jpg');">
+			<div class="wrap-login100">
+				<form class="login100-form validate-form" action="" method="post" novalidate>
+					{{form.hidden_tag()}}
+					<span class="login100-form-logo">
+						<i class="zmdi zmdi-landscape"></i>
+					</span>
+
+					<span class="login100-form-title p-b-34 p-t-27">
+						Sign Up
+					</span>
+
+					<div class="wrap-input100 validate-input" data-validate = "Enter username">
+						{{form.username(class="input100",placeholder="Username")}}
+					<!--	<input class="input100" type="text" name="username" placeholder="Username"> -->
+					<span class="focus-input100" data-placeholder="&#xf207;"></span>
+					{% for error in form.username.errors%}
+
+						[{{error}}]
+						{% endfor %}
+					</div>
+
+            <div class="wrap-input100 validate-input" data-validate = "Enter email">
+								{{form.email(class="input100",placeholder="Email")}}
+								<span class="focus-input100" data-placeholder="&#xf203;"></span>
+						<!--<input class="input100" type="email" name="email" placeholder="Email">-->
+							{% for error in form.email.errors%}
+
+						[{{error}}]
+						{% endfor %}
+					</div>
+
+
+
+
+
+            <div class="wrap-input100 validate-input" data-validate = "Enter player id">
+							{{form.id(class="input100",placeholder="Player ID")}}
+								<span class="focus-input100" data-placeholder="&#xf207;"></span>
+					<!--	<input class="input100" type="text" name="email" placeholder="Player ID"> -->
+						{% for error in form.id.errors%}
+						<span class="focus-input100" ></span>
+						[{{error}}]
+						{% endfor %}
+					</div>
+
+
+
+
+
+					<div class="wrap-input100 validate-input" data-validate="Enter password">
+						{{form.password(class="input100",placeholder="Password")}}
+							<span class="focus-input100" data-placeholder="&#xf191;"></span>
+					<!--	<input class="input100" type="password" name="pass" placeholder="Password"> -->
+					{% for error in form.password.errors%}
+						<span class="focus-input100"></span>
+						[{{error}}]
+						{% endfor %}
+
+					</div>
+
+
+
+
+            <div class="wrap-input100 validate-input" data-validate="Re-Enter password">
+								{{form.password2(class="input100",placeholder="Password")}}
+						<!--<input class="input100" type="password" name="rpass" placeholder="Re-Enter Password">-->
+							<span class="focus-input100" data-placeholder="&#xf191;"></span>
+						{% for error in form.password2.errors%}
+
+						[{{error}}]
+						{% endfor %}
+					</div>
+
+
+
+
+					<div class="container-login100-form-btn">
+						{{form.submit(class="login100-form-btn",placeholder="Register")}}
+					<!--	<button class="login100-form-btn">
+							Register
+						</button>-->
+					</div>
+
+
+				</form>
+			</div>
+		</div>
+	</div>
+
+
+	<div id="dropDownSelect1"></div>
+
+<!--===============================================================================================-->
+	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/animsition/js/animsition.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/bootstrap/js/popper.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/daterangepicker/moment.min.js"></script>
+	<script src="vendor/daterangepicker/daterangepicker.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/countdowntime/countdowntime.js"></script>
+<!--===============================================================================================-->
+	<script src="js/main.js"></script>
+
+</body>
+</html>

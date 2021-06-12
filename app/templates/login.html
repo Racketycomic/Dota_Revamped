@@ -1,135 +1,211 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <title>Login</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <link href="{{url_for('static',filename='/resources/css/axure_rp_page.css')}}" type="text/css" rel="stylesheet"/>
+    <link href="{{url_for('static',filename='/data/styles.css')}}" type="text/css" rel="stylesheet"/>
+    <link href="{{url_for('static',filename='/files/login/styles.css')}}" type="text/css" rel="stylesheet"/>
+    <script src="{{url_for('static',filename='/resources/scripts/jquery-3.2.1.min.js')}}"></script>
+    <script src="{{url_for('static',filename='/resources/scripts/axure/axQuery.js')}}"></script>
+    <script src="{{url_for('static',filename='/resources/scripts/axure/globals.js')}}"></script>
+    <script src="{{url_for('static',filename='/resources/scripts/axutils.js')}}"></script>
+    <script src="{{url_for('static',filename='/resources/scripts/axure/annotation.js')}}"></script>
+    <script src="{{url_for('static',filename='/resources/scripts/axure/axQuery.std.js')}}"></script>
+    <script src="{{url_for('static',filename='/resources/scripts/axure/doc.js')}}"></script>
+    <script src="{{url_for('static',filename='/resources/scripts/messagecenter.js')}}"></script>
+    <script src="{{url_for('static',filename='/resources/scripts/axure/events.js')}}"></script>
+    <script src="{{url_for('static',filename='/resources/scripts/axure/recording.js')}}"></script>
+    <script src="{{url_for('static',filename='/resources/scripts/axure/action.js')}}"></script>
+    <script src="{{url_for('static',filename='/resources/scripts/axure/expr.js')}}"></script>
+    <script src="{{url_for('static',filename='/resources/scripts/axure/geometry.js')}}"></script>
+    <script src="{{url_for('static',filename='/resources/scripts/axure/flyout.js')}}"></script>
+    <script src="{{url_for('static',filename='/resources/scripts/axure/model.js')}}"></script>
+    <script src="{{url_for('static',filename='/resources/scripts/axure/repeater.js')}}"></script>
+    <script src="{{url_for('static',filename='/resources/scripts/axure/sto.js')}}"></script>
+    <script src="{{url_for('static',filename='/resources/scripts/axure/utils.temp.js')}}"></script>
+    <script src="{{url_for('static',filename='/resources/scripts/axure/variables.js')}}"></script>
+    <script src="{{url_for('static',filename='/resources/scripts/axure/drag.js')}}"></script>
+    <script src="{{url_for('static',filename='/resources/scripts/axure/move.js')}}"></script>
+    <script src="{{url_for('static',filename='/resources/scripts/axure/visibility.js')}}"></script>
+    <script src="{{url_for('static',filename='/resources/scripts/axure/style.js')}}"></script>
+    <script src="{{url_for('static',filename='/resources/scripts/axure/adaptive.js')}}"></script>
+    <script src="{{url_for('static',filename='/resources/scripts/axure/tree.js')}}"></script>
+    <script src="{{url_for('static',filename='/resources/scripts/axure/init.temp.js')}}"></script>
+    <script src="{{url_for('static',filename='/resources/scripts/axure/legacy.js')}}"></script>
+    <script src="{{url_for('static',filename='/resources/scripts/axure/viewer.js')}}"></script>
+    <script src="{{url_for('static',filename='/resources/scripts/axure/math.js')}}"></script>
+    <script src="{{url_for('static',filename='/resources/scripts/axure/jquery.nicescroll.min.js')}}"></script>
+    <script src="{{url_for('static',filename='/data/document.js')}}"></script>
+    <script src="{{url_for('static',filename='/files/login/data.js')}}"></script>
+    <script type="text/javascript">
+      $axure.utils.getTransparentGifPath = function() { return 'resources/images/transparent.gif'; };
+      $axure.utils.getOtherPath = function() { return 'resources/Other.html'; };
+      $axure.utils.getReloadPath = function() { return 'resources/reload.html'; };
+    </script>
+  </head>
+  <body>
+    <div id="base" class="">
 
-	{% block link %} {% endblock %}
-	<title>Login V3</title>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-<!--===============================================================================================-->
-	<link rel="icon" type="image/png" href="{{url_for('static',filename='images/icons/favicon.ico')}}"/>
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='vendor/bootstrap/css/bootstrap.min.css')}}">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='fonts/font-awesome-4.7.0/css/font-awesome.min.css')}}">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='fonts/iconic/css/material-design-iconic-font.min.css')}}">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='vendor/animate/animate.css')}}">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='vendor/css-hamburgers/hamburgers.min.css')}}">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='vendor/animsition/css/animsition.min.css')}}">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='vendor/select2/select2.min.css')}}">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='vendor/daterangepicker/daterangepicker.css')}}">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/util.css')}}">
-	<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/main.css')}}">
-<!--===============================================================================================-->
-<link rel="stylesheet" type="text/css"  href="{{url_for('static',filename='css/dota.css')}}">
-<link id="wpml-legacy-vertical-list-0-inline-css" type="text/css" rel="stylesheet" href="{{url_for('static',filename='css/dota2.css')}}">
+      <!-- Unnamed (Image) -->
+      <div id="u54" class="ax_default image">
+        <img id="u54_img" class="img " src="{{url_for('static',filename='/images/homepage_blog/u0.jpg')}}"/>
+        <div id="u54_text" class="text " style="display:none; visibility: hidden">
+          <p></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Image) -->
+      <div id="u55" class="ax_default image">
+        <img id="u55_img" class="img " src="{{url_for('static',filename='/images/homepage_blog/u3.png')}}"/>
+        <div id="u55_text" class="text " style="display:none; visibility: hidden">
+          <p></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u56" class="ax_default heading_1">
+        <div id="u56_div" class=""></div>
+        <div id="u56_text" class="text ">
+          <p><span>Dota 2 Analytica</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Image) -->
+      <div id="u57" class="ax_default image">
+        <img id="u57_img" class="img " src="{{url_for('static',filename='/images/homepage_blog/u8.jpg')}}"/>
+        <div id="u57_text" class="text " style="display:none; visibility: hidden">
+          <p></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Image) -->
+      <div id="u58" class="ax_default image">
+        <img id="u58_img" class="img " src="{{url_for('static',filename='/images/homepage_blog/u21.png')}}"/>
+        <div id="u58_text" class="text " style="display:none; visibility: hidden">
+          <p></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u59" class="ax_default box_1">
+        <div id="u59_div" class=""></div>
+        <div id="u59_text" class="text ">
+          <p><span>LOGIN</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u60" class="ax_default box_1">
+        <div id="u60_div" class=""></div>
+        <div id="u60_text" class="text " style="display:none; visibility: hidden">
+          <p></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u61" class="ax_default box_1">
+        <div id="u61_div" class=""></div>
+        <div id="u61_text" class="text " style="display:none; visibility: hidden">
+          <p></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Shape) -->
+      <div id="u62" class="ax_default icon">
+        <img id="u62_img" class="img " src="{{url_for('static',filename='/images/login/u62.svg')}}"/>
+        <div id="u62_text" class="text " style="display:none; visibility: hidden">
+          <p></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u63" class="ax_default heading_1">
+        <div id="u63_div" class=""></div>
+        <div id="u63_text" class="text ">
+          <p><span>Please Enter your Credentials</span></p>
+        </div>
+      </div>
+
+  <form method="post" action="{{url_for('login')}}"> 
+      <!-- Username-->
+      <div id="u64" class="ax_default text_field">
+        <div id="u64_div" class=""></div>
+        <input id="u64_input" type="text" name="username" class="u64_input"/>
+      </div>
+      <!-- Password -->
+      <div id="u65" class="ax_default text_field">
+        <div id="u65_div" class=""></div>
+        <input id="u65_input" type="text" name="password" class="u65_input"/>
+      </div>
+      <!-- Submit (Rectangle) -->
+      <button type="submit">
+      <div id="u66" class="ax_default button" data-label="Submit">
+        <div id="u66_div" class=""></div>
+        
+        <div id="u66_text" class="text ">
+          <p><span>LOGIN</span></p>
+        </div>
+      </div>
+    </button>
+  </form>
+
+      <!-- Unnamed (Line) -->
+      <div id="u67" class="ax_default line">
+        <img id="u67_img" class="img " src="{{url_for('static',filename='/images/login/u67.svg')}}"/>
+        <div id="u67_text" class="text " style="display:none; visibility: hidden">
+          <p></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u68" class="ax_default heading_1">
+        <div id="u68_div" class=""></div>
+        <div id="u68_text" class="text ">
+          <p><span>Or, are you new here?</span></p>
+        </div>
+      </div>
+
+      <!-- Register (Rectangle) -->
+      <a href="{{url_for('register')}}">
+      <div id="u69" class="ax_default button" data-label="Register">
+        <div id="u69_div" class=""></div>
+        <div id="u69_text" class="text ">
+          <p><span>REGISTER</span></p>
+        </div>
+      </div>
+    </a>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u70" class="ax_default heading_2">
+        <div id="u70_div" class=""></div>
+        <div id="u70_text" class="text ">
+          <p><span>PERFORMANCE</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u71" class="ax_default heading_2">
+        <div id="u71_div" class=""></div>
+        <div id="u71_text" class="text ">
+          <p><span>MATCH DETAILS</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <a href="{{url_for('index')}}">
+      <div id="u72" class="ax_default heading_2">
+        <div id="u72_div" class=""></div>
+        <div id="u72_text" class="text ">
+          <p><span>HOME</span></p>
+        </div>
+      </div>
+    </div>
+  </a>
 
 
 
-<title>Dota 2</title>
-
-
-
-
-</head>
-<body>
-{% block one %} {% endblock %}
-
-
-{% block login %} {% endblock %}
-
-	<div class="limiter">
-
-		<div class="container-login100" style="background-image: url('images/bg-01.jpg');">
-			<div class="wrap-login100">
-				<form class="login100-form validate-for" action="" method="post" novalidate>
-					<span class="login100-form-logo">
-						<i class="zmdi zmdi-landscape"></i>
-					</span>
-					{{form.hidden_tag()}}
-					<span class="login100-form-title p-b-34 p-t-27">
-						Log in
-					</span>
-
-					<div class="wrap-input100 validate-input" >
-						{{form.email(class='input100',placeholder="Email")}}
-						<span class="focus-input100" data-placeholder="&#xf203;"></span>
-						{% for error in form.email.errors %}
-						<!--<input class="input100" type="text" name="username" placeholder="Username"> -->
-						<span class="focus-input100" data-placeholder="&#xf203;"></span>
-						[{{error}}]
-						{% endfor %}
-
-					</div>
-
-					<div class="wrap-input100 validate-input" >
-						{{form.password(class="input100",placeholder="Password")}}
-						<span class="focus-input100" data-placeholder="&#xf191;" ></span>
-					<!--	<input class="input100" type="password" name="pass" placeholder="Password"> -->
-						{% for error in form.password.errors %}
-
-						[{{error}}]
-
-
-						{% endfor %}
-					</div>
-
-					<div class="contact100-form-checkbox">
-						<!--<input class="input-checkbox100" id="ckb1" type="checkbox" name="remember-me"> -->
-						{{form.remember_me(class="input-checkbox100",id="ckb1")}}
-						{{form.remember_me.label(class="label-checkbox100",for="ckb1")}}
-						<!--<label class="label-checkbox100" for="ckb1">
-							Remember me
-						</label> -->
-					</div>
-
-					<div class="container-login100-form-btn">
-						{{form.submit(class="login100-form-btn",placeholder="LogIn")}}
-						<!--<button class="login100-form-btn">
-							Login
-						</button>-->
-					</div>
-					<div >
-						{% if flag1==1 %}
-				<center>		<p> <font color="red "> Invalid Email or Password </font></p> <center>
-						{% endif %}
-					</div>
-
-				</form>
-
-			</div>
-		</div>
-	</div>
-{% extends 'navbar.html' %}
-	{% block loginending %} {% endblock %}
-
-
-
-
-
-	<div id="dropDownSelect1"></div>
-<!--===============================================================================================-->
-	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
-<!--===============================================================================================-->
-	<script src="vendor/animsition/js/animsition.min.js"></script>
-<!--===============================================================================================-->
-	<script src="vendor/bootstrap/js/popper.js"></script>
-	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-<!--===============================================================================================-->
-	<script src="vendor/select2/select2.min.js"></script>
-<!--===============================================================================================-->
-	<script src="vendor/daterangepicker/moment.min.js"></script>
-	<script src="vendor/daterangepicker/daterangepicker.js"></script>
-<!--===============================================================================================-->
-	<script src="vendor/countdowntime/countdowntime.js"></script>
-<!--===============================================================================================-->
-	<script src="js/main.js"></script>
-</body>
+    <script src="{{url_for('static',filename='/resources/scripts/axure/ios.js')}}"></script>
+  </body>
 </html>

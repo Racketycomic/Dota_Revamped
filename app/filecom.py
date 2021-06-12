@@ -3,10 +3,12 @@ import json
 import yaml
 import os
 
+filepath = "/home/vinay/fsproject/app/files"
+
 class fil():
 
     def matchwrite(self, matchid):
-        playermatch = os.path.join("F:\\drev\\app\\files", "playermatch.txt")
+        playermatch = os.path.join(filepath, "playermatch.txt")
         mongoresult = db.playermatch.find_one({"_id": matchid})
         mresultstr = json.dumps(mongoresult, indent=-1)
         pmfile = open(playermatch, "a+")
@@ -22,7 +24,7 @@ class fil():
         return (q)
 
     def matchread(self, matchid):
-        playermatch_index = os.path.join("F:\\drev\\app\\files",
+        playermatch_index = os.path.join(filepath,
                                          "playermatch_index.txt")
         indexfile = open(playermatch_index, "r+")
         rstring = indexfile.read()
@@ -48,7 +50,7 @@ class fil():
     def multikey(self, heroname):
         matchidlist = []
         flag = 0
-        playermatch = os.join.path("F:\\drev\\app\\files", "playermatch.txt")
+        playermatch = os.join.path(filepath, "playermatch.txt")
         pmfile = open(playermatch, "r+")
         rstring = pmfile.read()
         rstring = rstring[:-2]
@@ -66,14 +68,14 @@ class fil():
         print(matchidlist)
         hdict = {heroname: matchidlist}
         rhresult = json.dumps(hdict, indent=-1)
-        playersecond = os.join.path("F:\\drev\\app\\files",
+        playersecond = os.join.path(filepath,
                                     "player_match_sec_hero.txt")
         secondarkey = open(playersecond, "a+")
         secondarkey.write(rhresult+'\n,\n')
         secondarkey.close()
 
     def deleterecord(self,matchid):
-        playermatch = os.path.join("F:\\drev\\app\\files", "playermatch.txt")
+        playermatch = os.path.join(filepath, "playermatch.txt")
         with open(playermatch, "r+") as file:
             rstring = file.read()
             rstring = rstring[:-2]

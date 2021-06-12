@@ -4,12 +4,14 @@ import json
 import time
 import os
 
+logfilepath="/home/vinay/fsproject/app"
+filepath="/home/vinay/fsproject/app/files"
 
 class regcl():
 
     def regfun():
         while(1):
-            direct = os.path.join("F:\\drev\\app", "app.log")
+            direct = os.path.join(logfilepath, "app.log")
             matchlist = []
             regex = r'GET /midswid/(\d{10})'
             with open(direct, "r") as file:
@@ -22,7 +24,7 @@ class regcl():
                  k = i[-10:]
                  mid.append(int(k))
             tlen = []
-            midfile = os.path.join("F:\\drev\\app\\files", "counterfile.txt")
+            midfile = os.path.join(filepath, "counterfile.txt")
             with open(midfile, "r+") as file:
                 rstring = file.read()
                 rdict = yaml.safe_load(rstring)

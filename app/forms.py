@@ -2,24 +2,37 @@ from flask_wtf import FlaskForm
 from wtforms import StringField,PasswordField,SubmitField,BooleanField,IntegerField
 from wtforms.validators import DataRequired,ValidationError,Email,EqualTo
 import requests
-from app import dbservices as db
+import dbservices as db
 import os
 import yaml
 import json
 
+filepath="/home/vinay/fsproject/app/files"
 
-class matchbar(FlaskForm):
-    matchinfo = SubmitField("GETMATCH")
-    matchid = IntegerField("Match ID", validators=[DataRequired()])
 
-    def validate_matchid(self, matchid):
-
-        req = requests.get(f"https://api.opendota.com/api/matches/{matchid.data}")
+class matchvalidations():
+    def validate_matchid(matchid):
+        req = requests.get(f"https://api.opendota.com/api/matches/{matchid}")
         js = req.json()
-        print(js)
         for key, values in js.items():
             if key == "error":
-                raise ValidationError("Please enter a valid MatchID")
+                return False
+            else:
+                return True
+
+
+# class matchbar(FlaskForm):
+#     matchinfo = SubmitField("GETMATCH")
+#     matchid = IntegerField("Match ID", validators=[DataRequired()])
+
+#     def validate_matchid(self, matchid):
+
+#         req = requests.get(f"https://api.opendota.com/api/matches/{matchid.data}")
+#         js = req.json()
+#         print(js)
+#         for key, values in js.items():
+#             if key == "error":
+#                 raise ValidationError("Please enter a valid MatchID")
 
 
 class heroname(FlaskForm):
@@ -28,8 +41,8 @@ class heroname(FlaskForm):
 
     def validate_hero(self, hero):
         t=0
-        playermatch = os.path.join("F:\\drev\\app\\files", "player_match_sec_hero.txt")
-        match = os.path.join("F:\\drev\\app\\files", "playermatch1.txt")
+        playermatch = os.path.join(filepath, "player_match_sec_hero.txt")
+        match = os.path.join(filepath, "playermatch1.txt")
         mlist = []
         j = False
         flag = 0

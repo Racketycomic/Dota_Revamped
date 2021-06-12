@@ -1,4 +1,4 @@
-from app import dbservices as db
+import dbservices as db
 import requests
 import collections
 import random
